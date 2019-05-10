@@ -1,15 +1,15 @@
 # Project information
-site_name: 'Pfizer ML'
-site_description: 'Pfizer Machine Learning'
+site_name: 'Stephen Ra'
+site_description: 'Personal website of Stephen Ra'
 site_author: 'Stephen Ra'
-site_url: 'http://machinelearning.pfizer.com'
+site_url: 'https://www.stephenra.com'
 
 # Copyright
 copyright: 'Copyright &copy; 2019 Stephen Ra'
 
 # Repository
-repo_name: 'pfizer/ml'
-repo_url: 'https://github.com/pfizer/ml'
+repo_name: 'stephenra/stephenra.github.io'
+repo_url: 'https://github.com/stephenra/stephenra.github.io'
 
 # Theme
 docs_dir: docs
@@ -50,7 +50,7 @@ nav:
 
 # Build directories
 
-site_dir: '/mnt/andha/static/ml'
+site_dir: 'site'
 
 
 # Extras
@@ -58,7 +58,7 @@ extra:
   manifest: 'manifest.webmanifest'
   social:
     - type: 'github'
-      link: 'https://github.com/pfizer/ml'
+      link: 'https://github.com/stephenra'
     - type: 'twitter'
       link: 'https://twitter.com/stephenrra'
 

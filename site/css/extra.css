@@ -65,3 +65,5 @@ em,
 i {
   font-style: italic;
 }
+
+.md-nav__link[for=__toc]+.md-nav__link:after{display:none}.md-nav__link[data-md-state=blur]{color:rgba(0,0,0,.54)}.md-nav__link--active,.md-nav__link:active{color:#ea2844}.md-nav__item--nested>.md-nav__link{color:inherit}.md-nav__link:focus,.md-nav__link:hover{color:#ea2844}.md-nav__source,.no-js

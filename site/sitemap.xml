@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-     <loc>http://machinelearning.pfizer.com/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/03-22-19-gcn/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/05-07-19-adaptive-sampling/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/02-22-19-glow/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/03-26-19-revisiting-flows/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/dgms/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc></loc>
+     
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/11-12-18-microrna/</loc>
-     <lastmod>2019-03-19</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>http://machinelearning.pfizer.com/de-novo/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/de-novo/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
@@ -51,18 +46,18 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/about/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/about/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/team/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/team/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>http://machinelearning.pfizer.com/publications/</loc>
-     <lastmod>2019-03-19</lastmod>
+     <loc>https://www.stephenra.com/publications/</loc>
+     <lastmod>2019-05-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
