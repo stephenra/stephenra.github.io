@@ -1,2 +1,0 @@
-
-The Machine Learning group is a research team within [Simulation and Modeling Sciences](http://confluence.pfizer.com/display/CompSci). As part of R&D, the team focuses on developing theory and methods in machine learning with the goal of solving difficult, yet tractable problems in drug discovery. We have interests at the intersection of computational sciences, Bayesian statistics, and machine learning.
