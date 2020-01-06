@@ -144,31 +144,6 @@
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-        
       </div>
       
         <div class="md-flex__cell md-flex__cell--shrink">
@@ -229,26 +204,13 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Blog" class="md-tabs__link md-tabs__link--active">
+        <a href="../01-06-20-bbrt/" title="Blog" class="md-tabs__link">
           Blog
         </a>
       
     </li>
   
 
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../End-to-end learning for phenotypic discovery" title="Projects" class="md-tabs__link">
-          Projects
-        </a>
-      
-    </li>
   
 
       
@@ -345,18 +307,54 @@
           
           
 
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      2020
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        2020
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01-06-20-bbrt/" title="Black box recursive translation for molecular optimization" class="md-nav__link">
+      Black box recursive translation for molecular optimization
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
-    <label class="md-nav__link" for="nav-2-1">
+    <label class="md-nav__link" for="nav-2-2">
       2019
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-1">
+      <label class="md-nav__title" for="nav-2-2">
         2019
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -453,46 +451,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      Projects
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Projects
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../End-to-end learning for phenotypic discovery" title="None" class="md-nav__link">
-      None
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
       About
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-3">
         About
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -595,7 +557,7 @@
                 
                 
                 <h1 id="on-conditioning-by-adaptive-sampling-part-i">On conditioning by adaptive sampling (Part I)</h1>
-<p>As my very first blog post, I thought I would look at a <a href="https://arxiv.org/abs/1901.10060">great, recent paper</a> by David Brookes, Hahnbeom Park, and Jennifer Listgarten<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup>, which extends their <a href="https://arxiv.org/abs/1810.03714">work from last year</a> that posits a framework, <strong>Conditioning by Adaptive Sampling (CbAS)</strong>, for model-based conditional density estimation. Of particular relevance to drug design is the application to protein properties. For example, how do we go about optimizing the design of DNA sequences for protein expression, binding, or for protein sequences that maximize properties like secondary structure or fluorescence?  Traditionally, <em>in vitro</em> methods for protein engineering have been exhaustive usually involving "greedy walks" through protein design space like <a href="https://www.ncbi.nlm.nih.gov/pubmed/1367624">directed evolution (DE)</a>. This paper proposes a more efficient <em>in silico</em> approach. For this particular entry, I'll summarize the key contributions and introduce some of the core concepts. The subsequent post will walk through the <strong>Cross-Entropy Method (CEM)</strong> and their experimental results.</p>
+<p>As my very first blog post, I thought I would look at a <a href="https://arxiv.org/abs/1901.10060">great, recent paper</a> by David Brookes, Hahnbeom Park, and Jennifer Listgarten<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, which extends their <a href="https://arxiv.org/abs/1810.03714">work from last year</a> that posits a framework, <strong>Conditioning by Adaptive Sampling (CbAS)</strong>, for model-based conditional density estimation. Of particular relevance to drug design is the application to protein properties. For example, how do we go about optimizing the design of DNA sequences for protein expression, binding, or for protein sequences that maximize properties like secondary structure or fluorescence?  Traditionally, <em>in vitro</em> methods for protein engineering have been exhaustive usually involving "greedy walks" through protein design space like <a href="https://www.ncbi.nlm.nih.gov/pubmed/1367624">directed evolution (DE)</a>. This paper proposes a more efficient <em>in silico</em> approach. For this particular entry, I'll summarize the key contributions and introduce some of the core concepts. The subsequent post will walk through the <strong>Cross-Entropy Method (CEM)</strong> and their experimental results.</p>
 <h2 id="summary">Summary</h2>
 <p>The main contributions of this paper are as follows:</p>
 <ul>
@@ -615,7 +577,7 @@
 \sqrt{n} \hat{\beta}(\delta)_{\mathbb{A}} - \beta^*_{\mathbb{A}}) \to \mathcal{N} (0, I^{-1}(\beta^*_\mathbb{A}))
 </script>
 
-<p>Thus, the oracle property holds that the asymptotic distribution of the estimator is the same as the asymptotic distribution of the MLE only on the true support. That is, the estimator adapts to knowing the true support without incurring a price. Why is this important? For the authors, they argue that their oracle <script type="math/tex">p(y|\boldsymbol{x})</script> effectively serves as a proxy for expensive and exhaustive laboratory-based property measurements. They also make the assumption that given an input, such as a DNA sequence, the oracle<sup id="fnref:2"><a class="footnote-ref" href="#fn:2" rel="footnote">2</a></sup> returns a distribution over the properties of interest. It's worth noting that this is within the context of the generative setting where we model the joint probability distribution <script type="math/tex">p(\boldsymbol{x}, y)</script>. Given the property oracle then, one can subsequently model and empirically sample from the underlying data distribution <script type="math/tex">p_{d}(\boldsymbol{x})</script> with a generative model <script type="math/tex">p(\boldsymbol{x}|\theta)</script> whose prior is conditioned on the desiderata encoded in property values <script type="math/tex">S</script>. The claim here is that this gives a certain degree of flexibility in specifying priors on the design space, unlike <a href="https://pubs.acs.org/doi/full/10.1021/acscentsci.7b00572">Gómez-Bombarelli et al. 2018</a> and <a href="https://arxiv.org/abs/1712.06148">Killoran et al. 2017</a>, which utilize a fixed VAE and GAN respectively.</p>
+<p>Thus, the oracle property holds that the asymptotic distribution of the estimator is the same as the asymptotic distribution of the MLE only on the true support. That is, the estimator adapts to knowing the true support without incurring a price. Why is this important? For the authors, they argue that their oracle <script type="math/tex">p(y|\boldsymbol{x})</script> effectively serves as a proxy for expensive and exhaustive laboratory-based property measurements. They also make the assumption that given an input, such as a DNA sequence, the oracle<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> returns a distribution over the properties of interest. It's worth noting that this is within the context of the generative setting where we model the joint probability distribution <script type="math/tex">p(\boldsymbol{x}, y)</script>. Given the property oracle then, one can subsequently model and empirically sample from the underlying data distribution <script type="math/tex">p_{d}(\boldsymbol{x})</script> with a generative model <script type="math/tex">p(\boldsymbol{x}|\theta)</script> whose prior is conditioned on the desiderata encoded in property values <script type="math/tex">S</script>. The claim here is that this gives a certain degree of flexibility in specifying priors on the design space, unlike <a href="https://pubs.acs.org/doi/full/10.1021/acscentsci.7b00572">Gómez-Bombarelli et al. 2018</a> and <a href="https://arxiv.org/abs/1712.06148">Killoran et al. 2017</a>, which utilize a fixed VAE and GAN respectively.</p>
 <p>Lastly, it's worth noting that they do not require their oracle to be differentiable and this additionally circumvents backpropagation through discrete input space.</p>
 <h2 id="conditioning-by-adaptive-sampling">Conditioning by adaptive sampling</h2>
 <p>The problem setting is as follows: find settings of the discrete random vector <script type="math/tex">\boldsymbol{x} \in \mathbb{N}^{L}</script> (e.g. representative of DNA sequences) that have a high probability of satisfying some property desiderata (e.g. maximal fluoresence of a protein).</p>
@@ -648,7 +610,7 @@
 
 <p>The authors also note that the difficulty of estimating the normalizing constant is compounded by the fact that <script type="math/tex">S</script> (and by definition, <script type="math/tex">P(S|\boldsymbol{x})</script> ) is "exceedingly rare". This translates to difficulties in optimization: any gradient-based reparameterization which yields differentiable Monte Carlo (MC) estimates of our expectation (i.e. the 'reparameterization trick' from <a href="https://www.ics.uci.edu/~welling/publications/papers/AEVB_ICLR14.pdf">Kingma and Welling 2014</a>) would require a non-trivial number of samples to be accurate and be very challenging for distributions over discrete state spaces. To put it another way, any naive MC estimation would require an intensive simulation effort, inversely proportional to the magnitude of <script type="math/tex">P(S|\boldsymbol{x})</script>.</p>
 <h2 id="importance-sampling-based-estimation">Importance sampling-based estimation</h2>
-<p>I'm not going to review importance sampling here<sup id="fnref:3"><a class="footnote-ref" href="#fn:3" rel="footnote">3</a></sup>. Suffice to say that the basic idea is that we can estimate the expectation of a random variable under one distribution <script type="math/tex">p(\boldsymbol{x})</script> from samples of an alternative distribution <script type="math/tex">r(\boldsymbol{x})</script> and that our importance sampling distribution <script type="math/tex">r(\boldsymbol{x})</script> can be used to mitigate the problem of high variance and an exceedingly small expectation <script type="math/tex">\mathbb{E}_{r^{(t)}(\boldsymbol{x})} \big[P(S^{(t)}|\boldsymbol{x}\big]</script>. This approach is not without drawbacks however, and perturbations in weight space can have deleterious effects on the estimator.</p>
+<p>I'm not going to review importance sampling here<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Suffice to say that the basic idea is that we can estimate the expectation of a random variable under one distribution <script type="math/tex">p(\boldsymbol{x})</script> from samples of an alternative distribution <script type="math/tex">r(\boldsymbol{x})</script> and that our importance sampling distribution <script type="math/tex">r(\boldsymbol{x})</script> can be used to mitigate the problem of high variance and an exceedingly small expectation <script type="math/tex">\mathbb{E}_{r^{(t)}(\boldsymbol{x})} \big[P(S^{(t)}|\boldsymbol{x}\big]</script>. This approach is not without drawbacks however, and perturbations in weight space can have deleterious effects on the estimator.</p>
 <p>Thus, the objective can be rewritten as:</p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -688,13 +650,13 @@
 <hr />
 <ol>
 <li id="fn:1">
-<p>A good entry point to Listgarten's earlier work is her interview on <a href="https://art19.com/shows/talking-machines/episodes/632ffc91-f94b-4997-9b62-8d2c03840c21">Talking Machines</a>, where she discusses her work at MSR New England on predicting off-target effects for CRISPR guide design.&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>A good entry point to Listgarten's earlier work is her interview on <a href="https://art19.com/shows/talking-machines/episodes/632ffc91-f94b-4997-9b62-8d2c03840c21">Talking Machines</a>, where she discusses her work at MSR New England on predicting off-target effects for CRISPR guide design.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Additional assumptions are that the oracle is well-behaved and noise-free&#160;<a class="footnote-backref" href="#fnref:2" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Additional assumptions are that the oracle is well-behaved and noise-free&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p>For this, I recommend <a href="https://statweb.stanford.edu/~owen/mc/Ch-var-is.pdf">this chapter</a> from Art Owen's book, "Monte Carlo theory, methods and examples".&#160;<a class="footnote-backref" href="#fnref:3" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>For this, I recommend <a href="https://statweb.stanford.edu/~owen/mc/Ch-var-is.pdf">this chapter</a> from Art Owen's book, "Monte Carlo theory, methods and examples".&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -718,7 +680,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Latest" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01-06-20-bbrt/" title="Black box recursive translation for molecular optimization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -727,7 +689,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Latest
+                Black box recursive translation for molecular optimization
               </span>
             </div>
           </a>
@@ -755,7 +717,7 @@
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2019 Stephen Ra
+            Copyright &copy; 2020 Stephen Ra
           </div>
         
         powered by
