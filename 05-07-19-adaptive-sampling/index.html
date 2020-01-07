@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#on-conditioning-by-adaptive-sampling-part-i" tabindex="1" class="md-skip">
+      <a href="#on-conditioning-by-adaptive-sampling" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -186,13 +186,16 @@
     <ul class="md-tabs__list">
       
         
-  <li class="md-tabs__item">
-    
-      <a href=".." title="Latest" class="md-tabs__link">
-        Latest
-      </a>
-    
-  </li>
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." title="Latest" class="md-tabs__link">
+          Latest
+        </a>
+      
+    </li>
+  
 
       
         
@@ -275,10 +278,34 @@
       
 
 
-  <li class="md-nav__item">
-    <a href=".." title="Latest" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
       Latest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Latest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Black box recursive translations for molecular optimization" class="md-nav__link">
+      Black box recursive translations for molecular optimization
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -328,8 +355,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../01-06-20-bbrt/" title="Black box recursive translation for molecular optimization" class="md-nav__link">
-      Black box recursive translation for molecular optimization
+    <a href="../01-06-20-bbrt/" title="Black box recursive translations for molecular optimization" class="md-nav__link">
+      Black box recursive translations for molecular optimization
     </a>
   </li>
 
@@ -466,20 +493,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../publications/" title="Publications" class="md-nav__link">
-      Publications
+    <a href="../about/" title=" " class="md-nav__link">
+       
     </a>
   </li>
 
@@ -556,7 +571,7 @@
                   <a href="https://github.com/stephenra/stephenra.github.io/edit/master/docs/05-07-19-adaptive-sampling.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="on-conditioning-by-adaptive-sampling-part-i">On conditioning by adaptive sampling (Part I)</h1>
+                <h1 id="on-conditioning-by-adaptive-sampling">On Conditioning by Adaptive Sampling</h1>
 <p>As my very first blog post, I thought I would look at a <a href="https://arxiv.org/abs/1901.10060">great, recent paper</a> by David Brookes, Hahnbeom Park, and Jennifer Listgarten<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, which extends their <a href="https://arxiv.org/abs/1810.03714">work from last year</a> that posits a framework, <strong>Conditioning by Adaptive Sampling (CbAS)</strong>, for model-based conditional density estimation. Of particular relevance to drug design is the application to protein properties. For example, how do we go about optimizing the design of DNA sequences for protein expression, binding, or for protein sequences that maximize properties like secondary structure or fluorescence?  Traditionally, <em>in vitro</em> methods for protein engineering have been exhaustive usually involving "greedy walks" through protein design space like <a href="https://www.ncbi.nlm.nih.gov/pubmed/1367624">directed evolution (DE)</a>. This paper proposes a more efficient <em>in silico</em> approach. For this particular entry, I'll summarize the key contributions and introduce some of the core concepts. The subsequent post will walk through the <strong>Cross-Entropy Method (CEM)</strong> and their experimental results.</p>
 <h2 id="summary">Summary</h2>
 <p>The main contributions of this paper are as follows:</p>
@@ -680,7 +695,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../01-06-20-bbrt/" title="Black box recursive translation for molecular optimization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01-06-20-bbrt/" title="Black box recursive translations for molecular optimization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -689,19 +704,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Black box recursive translation for molecular optimization
+                Black box recursive translations for molecular optimization
               </span>
             </div>
           </a>
         
         
-          <a href="../about/" title="About" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../about/" title=" " class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                About
+                 
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -729,6 +744,8 @@
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="mailto:stephen.ra@pfizer.com" class="md-footer-social__link fa fa-envelope-o"></a>
     
       <a href="https://github.com/stephenra" class="md-footer-social__link fa fa-github"></a>
     

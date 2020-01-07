@@ -42,7 +42,7 @@
     
     
       
-        <title>Stephen Ra</title>
+        <title>Black box recursive translations for molecular optimization - Stephen Ra</title>
       
     
     
@@ -137,7 +137,7 @@
               Stephen Ra
             </span>
             <span class="md-header-nav__topic">
-              Latest
+              Black box recursive translations for molecular optimization
             </span>
           
         </div>
@@ -179,18 +179,23 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
-  <li class="md-tabs__item">
-    
-      <a href="." title="Latest" class="md-tabs__link md-tabs__link--active">
-        Latest
-      </a>
-    
-  </li>
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="." title="Latest" class="md-tabs__link md-tabs__link--active">
+          Latest
+        </a>
+      
+    </li>
+  
 
       
         
@@ -275,6 +280,27 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Latest
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Latest
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -283,11 +309,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Latest
+        Black box recursive translations for molecular optimization
       </label>
     
-    <a href="." title="Latest" class="md-nav__link md-nav__link--active">
-      Latest
+    <a href="." title="Black box recursive translations for molecular optimization" class="md-nav__link md-nav__link--active">
+      Black box recursive translations for molecular optimization
     </a>
     
       
@@ -322,8 +348,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#black-box-recursive-translation" title="Black Box Recursive Translation" class="md-nav__link">
-    Black Box Recursive Translation
+  <a href="#black-box-recursive-translation-bbrt" title="Black Box Recursive Translation (BBRT)" class="md-nav__link">
+    Black Box Recursive Translation (BBRT)
   </a>
   
     <nav class="md-nav">
@@ -433,6 +459,11 @@
     
   </li>
 
+        
+      </ul>
+    </nav>
+  </li>
+
     
       
       
@@ -478,8 +509,8 @@
 
 
   <li class="md-nav__item">
-    <a href="01-06-20-bbrt/" title="Black box recursive translation for molecular optimization" class="md-nav__link">
-      Black box recursive translation for molecular optimization
+    <a href="01-06-20-bbrt/" title="Black box recursive translations for molecular optimization" class="md-nav__link">
+      Black box recursive translations for molecular optimization
     </a>
   </li>
 
@@ -555,20 +586,8 @@
 
 
   <li class="md-nav__item">
-    <a href="about/" title="About" class="md-nav__link">
-      About
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="publications/" title="Publications" class="md-nav__link">
-      Publications
+    <a href="about/" title=" " class="md-nav__link">
+       
     </a>
   </li>
 
@@ -620,8 +639,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#black-box-recursive-translation" title="Black Box Recursive Translation" class="md-nav__link">
-    Black Box Recursive Translation
+  <a href="#black-box-recursive-translation-bbrt" title="Black Box Recursive Translation (BBRT)" class="md-nav__link">
+    Black Box Recursive Translation (BBRT)
   </a>
   
     <nav class="md-nav">
@@ -741,7 +760,8 @@
                 
                 
                 <h1 id="black-box-recursive-translations-for-molecular-optimization">Black Box Recursive Translations for Molecular Optimization</h1>
-<p>Machine learning algorithms for generating molecular structures offer a promising new approach to drug discovery. We cast molecular optimization as a translation problem, where the goal is to map an input compound to a target compound with improved biochemical properties. Remarkably, we observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step. We show that this finding is invariant to the choice of translation model, making this a "black box" algorithm. We call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. This simple, powerful technique operates strictly on the inputs and outputs of any translation model. We obtain new state-of-the-art results for molecular property optimization tasks using our simple drop-in replacement with well-known sequence and graph-based models. Our method provides a significant boost in performance relative to its non-recursive peers with just a simple <code>for</code> loop. Further, BBRT is highly interpretable, allowing users to map the evolution of newly discovered compounds from known starting points.</p>
+<p>For the first post of 2020, I wanted to highlight our last contribution of 2019 -- work done by <a href="http://fdamani.com/">Farhan Damani</a>, a Ph.D. student with <a href="https://www.cs.princeton.edu/~rpa/">Ryan Adams</a> at Princeton University, my colleague, <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself -- where we cast molecular optimization as a translation problem, where the goal is to map an input compound to a target compound with improved biochemical properties. We observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step. We demonstrate that this finding is invariant to the choice of translation model, making this a "black box" algorithm. We call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. This simple, powerful technique operates strictly on the inputs and outputs of any translation model. We obtain new state-of-the-art results for molecular property optimization tasks using our simple drop-in replacement with well-known sequence and graph-based models. Our method provides a significant boost in performance relative to its non-recursive peers with just a simple <code>for</code> loop. Lastly, BBRT is highly interpretable, allowing users to map the evolution of newly discovered compounds from known starting points.</p>
+<p>The preprint is now available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a>.</p>
 <hr />
 <h2 id="introduction">Introduction</h2>
 <p>Automated molecular design using generative models offers the promise of rapidly discovering new compounds with desirable properties. Chemical space is large, discrete, and unstructured, which together, present important challenges to the success of any molecular optimization campaign. Approximately <span><span class="MathJax_Preview">10^8</span><script type="math/tex">10^8</script></span> compounds have been synthesized<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> while the range of potential drug-like candidates is estimated to between <span><span class="MathJax_Preview">10^{23}</span><script type="math/tex">10^{23}</script></span> and <span><span class="MathJax_Preview">10^{80}</span><script type="math/tex">10^{80}</script></span><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Consequently, new methods for intelligent search are paramount.</p>
@@ -788,7 +808,7 @@ P(y|x; \theta) = \prod_{t=1}^n P(y_t | y_{<t}, x, \theta)
 
 <p>These models use an encoder-decoder architecture where the input and output are both parameterized by recurrent neural networks (RNNs). The encoder reads the source sequence <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and generates a sequence of hidden representations. The decoder estimates the conditional probability of each target token given the source representations and its preceding tokens. The attention mechanism<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup> helps with token
 generation by focusing on token-specific source representations.</p>
-<h2 id="black-box-recursive-translation">Black Box Recursive Translation</h2>
+<h2 id="black-box-recursive-translation-bbrt">Black Box Recursive Translation (BBRT)</h2>
 <h3 id="current-inference-methods">Current inference methods</h3>
 <p>For translation models, the inference task is to compute <span><span class="MathJax_Preview">y^* = {\operatorname{argmax}} p(y|x,\theta)</span><script type="math/tex">y^* = {\operatorname{argmax}} p(y|x,\theta)</script></span>. Because the search space of potential outputs is large, in practice we can only explore a limited number of
 sequences. Given a fixed computational budget, likely sequences are typically generated with heuristics. Decoding methods can be classified as deterministic or stochastic. We now describe both classes of decoding
@@ -1421,13 +1441,13 @@ a population of 900 sequences per iteration..</small></center></p>
       <nav class="md-footer-nav__inner md-grid">
         
         
-          <a href="01-06-20-bbrt/" title="Black box recursive translation for molecular optimization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="01-06-20-bbrt/" title="Black box recursive translations for molecular optimization" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Black box recursive translation for molecular optimization
+                Black box recursive translations for molecular optimization
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1455,6 +1475,8 @@ a population of 900 sequences per iteration..</small></center></p>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="assets/fonts/font-awesome.css">
+    
+      <a href="mailto:stephen.ra@pfizer.com" class="md-footer-social__link fa fa-envelope-o"></a>
     
       <a href="https://github.com/stephenra" class="md-footer-social__link fa fa-github"></a>
     
