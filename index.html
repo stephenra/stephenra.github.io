@@ -121,6 +121,72 @@
       
       
         
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="." class="md-tabs__link md-tabs__link--active">
+        Latest
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="01-06-20-bbrt/" class="md-tabs__link">
+        Blog
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="about/" class="md-tabs__link">
+        About
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -134,8 +200,10 @@
 
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.stephenra.com" title="Stephen Ra" class="md-nav__button md-logo" aria-label="Stephen Ra">
       
@@ -656,7 +724,7 @@
                 
                 
                 <h1 id="black-box-recursive-translations-for-molecular-optimization">Black Box Recursive Translations for Molecular Optimization</h1>
-<p>In this entry, I wanted to highlight work done by ML research intern, <a href="http://fdamani.com/">Farhan Damani</a> (previously a Ph.D. student with <a href="https://www.cs.princeton.edu/~rpa/">Ryan Adams</a> at Princeton), a Pfizer colleague <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a> and was <a href="https://ml4molecules.github.io/papers2020/accepted.html">accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules</a>.</p>
+<p>In this entry, I wanted to highlight work done by ML research intern, <a href="http://fdamani.com/">Farhan Damani</a> (previously a Ph.D. student with Ryan Adams), a Pfizer colleague <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a> and was <a href="https://ml4molecules.github.io/papers2020/accepted.html">accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules</a>.</p>
 <p>The goal here is to map an input compound to a target compound in property space with the expectation that "translated" molecules have some improved biochemical property <em>desiderata</em>. Interestingly, we observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step akin to self-distillation dynamics. We demonstrate that this finding is largely invariant to the choice of translation model, making this a "black box" algorithm and accordingly call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. By operating strictly on the inputs and outputs of any translation model, we demonstrate results competitive with the latest, state-of-the-art benchmarks for molecular property optimization tasks. Furthermore, using our simple drop-in replacement with well-known sequence and graph-based models, we show a significant boost in performance relative to non-recursive baselines. Lastly, BBRT facilitates interpretation, allowing users to map the evolution of newly discovered compounds from known starting points.</p>
 <p><img src='../img/bbrt.gif' alt='workflow' width="800"/></p>
 <hr />
@@ -1400,7 +1468,7 @@ a population of 900 sequences per iteration..</small></center></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.ca5457b8.min.js"></script>
