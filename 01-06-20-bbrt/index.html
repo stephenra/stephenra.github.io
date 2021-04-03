@@ -553,7 +553,19 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        
+        Bio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications/" class="md-nav__link">
+        Publications
       </a>
     </li>
   
@@ -726,8 +738,9 @@
                 
                 
                 <h1 id="black-box-recursive-translations-for-molecular-optimization">Black Box Recursive Translations for Molecular Optimization</h1>
-<p>For the first post of 2020, I wanted to highlight our last contribution of 2019 -- work done by <a href="http://fdamani.com/">Farhan Damani</a>, a Ph.D. student with <a href="https://www.cs.princeton.edu/~rpa/">Ryan Adams</a> at Princeton University, my colleague, <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself -- where we cast molecular optimization as a translation problem, where the goal is to map an input compound to a target compound with improved biochemical properties. We observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step. We demonstrate that this finding is invariant to the choice of translation model, making this a "black box" algorithm. We call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. This simple, powerful technique operates strictly on the inputs and outputs of any translation model. We obtain new state-of-the-art results for molecular property optimization tasks using our simple drop-in replacement with well-known sequence and graph-based models. Our method provides a significant boost in performance relative to its non-recursive peers with just a simple <code>for</code> loop. Lastly, BBRT is highly interpretable, allowing users to map the evolution of newly discovered compounds from known starting points.</p>
-<p>The preprint is now available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a>.</p>
+<p>In this entry, I wanted to highlight work done by ML research intern, <a href="http://fdamani.com/">Farhan Damani</a> (previously a Ph.D. student with Ryan Adams), a Pfizer colleague <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a> and was <a href="https://ml4molecules.github.io/papers2020/accepted.html">accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules</a>.</p>
+<p>The goal here is to map an input compound to a target compound in property space with the expectation that "translated" molecules have some improved biochemical property <em>desiderata</em>. Interestingly, we observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step akin to self-distillation dynamics. We demonstrate that this finding is largely invariant to the choice of translation model, making this a "black box" algorithm and accordingly call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. By operating strictly on the inputs and outputs of any translation model, we demonstrate results competitive with the latest, state-of-the-art benchmarks for molecular property optimization tasks. Furthermore, using our simple drop-in replacement with well-known sequence and graph-based models, we show a significant boost in performance relative to non-recursive baselines. Lastly, BBRT facilitates interpretation, allowing users to map the evolution of newly discovered compounds from known starting points.</p>
+<p><img src='../img/bbrt.gif' alt='workflow' width="800"/></p>
 <hr />
 <h2 id="introduction">Introduction</h2>
 <p>Automated molecular design using generative models offers the promise of rapidly discovering new compounds with desirable properties. Chemical space is large, discrete, and unstructured, which together, present important challenges to the success of any molecular optimization campaign. Approximately <span><span class="MathJax_Preview">10^8</span><script type="math/tex">10^8</script></span> compounds have been synthesized<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> while the range of potential drug-like candidates is estimated to between <span><span class="MathJax_Preview">10^{23}</span><script type="math/tex">10^{23}</script></span> and <span><span class="MathJax_Preview">10^{80}</span><script type="math/tex">10^{80}</script></span><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Consequently, new methods for intelligent search are paramount.</p>
