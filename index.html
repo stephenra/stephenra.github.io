@@ -48,7 +48,7 @@
       <link rel="manifest" href="manifest.webmanifest" crossorigin="use-credentials">
     
     
-      <link rel="stylesheet" href="css/extra.css">
+      <link rel="stylesheet" href="stylesheets/extra.css">
     
     
       
@@ -203,9 +203,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.stephenra.com" title="Stephen Ra" class="md-nav__button md-logo" aria-label="Stephen Ra">
       
@@ -596,6 +594,153 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-work" class="md-nav__link">
+    Related work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#molecular-optimization-as-a-translation-problem" class="md-nav__link">
+    Molecular optimization as a translation problem
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#black-box-recursive-translation-bbrt" class="md-nav__link">
+    Black Box Recursive Translation (BBRT)
+  </a>
+  
+    <nav class="md-nav" aria-label="Black Box Recursive Translation (BBRT)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-inference-methods" class="md-nav__link">
+    Current inference methods
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursive-inference" class="md-nav__link">
+    Recursive inference
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experiments" class="md-nav__link">
+    Experiments
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#molecule-generation-results" class="md-nav__link">
+    Molecule generation results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empirical-properties-of-recursive-translation" class="md-nav__link">
+    Empirical properties of recursive translation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interpretable-user-centric-optimization" class="md-nav__link">
+    Interpretable, user-centric optimization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improving-secondary-properties-by-ranking" class="md-nav__link">
+    Improving secondary properties by ranking
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-work" class="md-nav__link">
+    Future work
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix" class="md-nav__link">
+    Appendix
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-recursive-penalized-logp-experiments" class="md-nav__link">
+    A. Recursive penalized logP experiments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-supplemental-experiments" class="md-nav__link">
+    B. Supplemental Experiments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -608,7 +753,7 @@
 <p><img src='../img/bbrt.gif' alt='workflow' width="800"/></p>
 <hr />
 <h2 id="introduction">Introduction</h2>
-<p>Automated molecular design using generative models offers the promise of rapidly discovering new compounds with desirable properties. Chemical space is large, discrete, and unstructured, which together, present important challenges to the success of any molecular optimization campaign. Approximately <span><span class="MathJax_Preview">10^8</span><script type="math/tex">10^8</script></span> compounds have been synthesized<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> while the range of potential drug-like candidates is estimated to between <span><span class="MathJax_Preview">10^{23}</span><script type="math/tex">10^{23}</script></span> and <span><span class="MathJax_Preview">10^{80}</span><script type="math/tex">10^{80}</script></span><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Consequently, new methods for intelligent search are paramount.</p>
+<p>Automated molecular design using generative models offers the promise of rapidly discovering new compounds with desirable properties. Chemical space is large, discrete, and unstructured, which together, present important challenges to the success of any molecular optimization campaign. Approximately <span class="arithmatex">\(10^8\)</span> compounds have been synthesized<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> while the range of potential drug-like candidates is estimated to between <span class="arithmatex">\(10^{23}\)</span> and <span class="arithmatex">\(10^{80}\)</span><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>. Consequently, new methods for intelligent search are paramount.</p>
 <p>A recently introduced paradigm for compound generation treats molecular optimization as a translation task where the goal is to map an input compound to a target compound with favorable properties<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. This framework has presented impressive results for constrained molecular property optimization where generated compounds are restricted
 to be structurally similar to the source molecule.</p>
 <p>We extend this framework to unconstrained molecular optimization by treating inference, vis-à-vis decoding strategies, as a first-class citizen. We observe that generated molecules can be repeatedly fed back into the model to generate even better compounds. This finding is
@@ -636,58 +781,56 @@ application of translation modeling, one of molecular optimization<sup id="fnref
 sequences exhibiting low diversity<sup id="fnref:23"><a class="footnote-ref" href="#fn:23">23</a></sup>. Recent work propose diverse beam search<sup id="fnref:24"><a class="footnote-ref" href="#fn:24">24</a></sup> <sup id="fnref:25"><a class="footnote-ref" href="#fn:25">25</a></sup> <sup id="fnref:26"><a class="footnote-ref" href="#fn:26">26</a></sup>, sampling methods geared towards open-ended tasks<sup id="fnref:27"><a class="footnote-ref" href="#fn:27">27</a></sup> <sup id="fnref2:23"><a class="footnote-ref" href="#fn:23">23</a></sup>, and reinforcement learning for post-hoc secondary objective optimization<sup id="fnref:28"><a class="footnote-ref" href="#fn:28">28</a></sup> <sup id="fnref:29"><a class="footnote-ref" href="#fn:29">29</a></sup> <sup id="fnref:30"><a class="footnote-ref" href="#fn:30">30</a></sup>. Motivated by molecular optimization as a translation task, we develop Black Box Recursive Translation (BBRT). We show BBRT generates samples with better molecular properties than its non-recursive peers for both deterministic and stochastic decoding strategies.</p>
 <h2 id="molecular-optimization-as-a-translation-problem">Molecular optimization as a translation problem</h2>
 <p>For illustrative purposes, we describe the translation framework and the corresponding inference method for sequences. We emphasize that our inference method is a black box, which means it is invariant to specific architectural and representational choices.</p>
-<p><strong>Background.</strong> Our goal is to optimize the chemical properties of molecules using a sequence-based molecular representation. We are given <span><span class="MathJax_Preview">(x,y) \in (\mathcal{X}, \mathcal{Y})</span><script type="math/tex">(x,y) \in (\mathcal{X}, \mathcal{Y})</script></span> as a sequence pair, where
-<span><span class="MathJax_Preview">x = (x_1, x_2, \dots, x_m)</span><script type="math/tex">x = (x_1, x_2, \dots, x_m)</script></span> is the source sequence with <span><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> tokens and <span><span class="MathJax_Preview">y = (y_1, y_2, \dots, y_n)</span><script type="math/tex">y = (y_1, y_2, \dots, y_n)</script></span> is the target sequence with <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> tokens, and <span><span class="MathJax_Preview">\mathcal{X}</span><script type="math/tex">\mathcal{X}</script></span> and <span><span class="MathJax_Preview">\mathcal{Y}</span><script type="math/tex">\mathcal{Y}</script></span> are the source and target domains
-respectively. We focus on problems where the source and target domains are identical. By construction, our training pairs <span><span class="MathJax_Preview">(x,y)</span><script type="math/tex">(x,y)</script></span> have high chemical similarity, which helps the model learn local edits to <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>.
-Additionally, <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> always scores higher than <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> on the property to be optimized. These properties are specified beforehand when constructing training pairs. A single task will typically optimize a single property such as potency, toxicity, or lipophilic efficiency.</p>
-<p>A sequence to sequence (Seq2Seq) model <sup id="fnref2:20"><a class="footnote-ref" href="#fn:20">20</a></sup> learns parameters <span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> that estimate a conditional probability model <span><span class="MathJax_Preview">P(y|x; \theta)</span><script type="math/tex">P(y|x; \theta)</script></span>, where <span><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span> is estimated by maximizing the log-likelihood:</p>
-<script type="math/tex; mode=display">
+<p><strong>Background.</strong> Our goal is to optimize the chemical properties of molecules using a sequence-based molecular representation. We are given <span class="arithmatex">\((x,y) \in (\mathcal{X}, \mathcal{Y})\)</span> as a sequence pair, where
+<span class="arithmatex">\(x = (x_1, x_2, \dots, x_m)\)</span> is the source sequence with <span class="arithmatex">\(m\)</span> tokens and <span class="arithmatex">\(y = (y_1, y_2, \dots, y_n)\)</span> is the target sequence with <span class="arithmatex">\(n\)</span> tokens, and <span class="arithmatex">\(\mathcal{X}\)</span> and <span class="arithmatex">\(\mathcal{Y}\)</span> are the source and target domains
+respectively. We focus on problems where the source and target domains are identical. By construction, our training pairs <span class="arithmatex">\((x,y)\)</span> have high chemical similarity, which helps the model learn local edits to <span class="arithmatex">\(x\)</span>.
+Additionally, <span class="arithmatex">\(y\)</span> always scores higher than <span class="arithmatex">\(x\)</span> on the property to be optimized. These properties are specified beforehand when constructing training pairs. A single task will typically optimize a single property such as potency, toxicity, or lipophilic efficiency.</p>
+<p>A sequence to sequence (Seq2Seq) model <sup id="fnref2:20"><a class="footnote-ref" href="#fn:20">20</a></sup> learns parameters <span class="arithmatex">\(\theta\)</span> that estimate a conditional probability model <span class="arithmatex">\(P(y|x; \theta)\)</span>, where <span class="arithmatex">\(\theta\)</span> is estimated by maximizing the log-likelihood:</p>
+<div class="arithmatex">\[
 L(\theta) = \sum_{(x,y) \in (\mathcal{X}, \mathcal{Y})} \log P(y|x,\theta)
-</script>
-
+\]</div>
 <p>The conditional probability is typically factorized according to the Chain Rule:</p>
-<script type="math/tex; mode=display">
-P(y|x; \theta) = \prod_{t=1}^n P(y_t | y_{<t}, x, \theta)
-</script>
-
-<p>These models use an encoder-decoder architecture where the input and output are both parameterized by recurrent neural networks (RNNs). The encoder reads the source sequence <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> and generates a sequence of hidden representations. The decoder estimates the conditional probability of each target token given the source representations and its preceding tokens. The attention mechanism<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup> helps with token
+<div class="arithmatex">\[
+P(y|x; \theta) = \prod_{t=1}^n P(y_t | y_{&lt;t}, x, \theta)
+\]</div>
+<p>These models use an encoder-decoder architecture where the input and output are both parameterized by recurrent neural networks (RNNs). The encoder reads the source sequence <span class="arithmatex">\(x\)</span> and generates a sequence of hidden representations. The decoder estimates the conditional probability of each target token given the source representations and its preceding tokens. The attention mechanism<sup id="fnref:31"><a class="footnote-ref" href="#fn:31">31</a></sup> helps with token
 generation by focusing on token-specific source representations.</p>
 <h2 id="black-box-recursive-translation-bbrt">Black Box Recursive Translation (BBRT)</h2>
 <h3 id="current-inference-methods">Current inference methods</h3>
-<p>For translation models, the inference task is to compute <span><span class="MathJax_Preview">y^* = {\operatorname{argmax}} p(y|x,\theta)</span><script type="math/tex">y^* = {\operatorname{argmax}} p(y|x,\theta)</script></span>. Because the search space of potential outputs is large, in practice we can only explore a limited number of
+<p>For translation models, the inference task is to compute <span class="arithmatex">\(y^* = {\operatorname{argmax}} p(y|x,\theta)\)</span>. Because the search space of potential outputs is large, in practice we can only explore a limited number of
 sequences. Given a fixed computational budget, likely sequences are typically generated with heuristics. Decoding methods can be classified as deterministic or stochastic. We now describe both classes of decoding
 strategies in detail. For this section, we follow the notation described in Welleck et al. (2019)<sup id="fnref:32"><a class="footnote-ref" href="#fn:32">32</a></sup>.</p>
 <p><strong>Deterministic decoding.</strong> Two popular deterministic methods include
 greedy search and beam search<sup id="fnref:33"><a class="footnote-ref" href="#fn:33">33</a></sup> <sup id="fnref:34"><a class="footnote-ref" href="#fn:34">34</a></sup>. Greedy search performs a
-single left-to-right pass, selecting the most likely token at each time step: <span><span class="MathJax_Preview">y_t = {\operatorname{argmax}} p(y_t|y_{&lt;t}, x,\theta)</span><script type="math/tex">y_t = {\operatorname{argmax}} p(y_t|y_{<t}, x,\theta)</script></span>. While this method is efficient, it leads to suboptimal generation as it does not take into account the future when selecting tokens.</p>
-<p>Beam search is a generalization of greedy search and maintains a set of <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> hypotheses at each time-step where each hypothesis is a partially decoded sequence. While in machine translation beam search variants are
+single left-to-right pass, selecting the most likely token at each time step: <span class="arithmatex">\(y_t = {\operatorname{argmax}} p(y_t|y_{&lt;t}, x,\theta)\)</span>. While this method is efficient, it leads to suboptimal generation as it does not take into account the future when selecting tokens.</p>
+<p>Beam search is a generalization of greedy search and maintains a set of <span class="arithmatex">\(k\)</span> hypotheses at each time-step where each hypothesis is a partially decoded sequence. While in machine translation beam search variants are
 the preferred method, for more open-ended tasks, beam search fails to generate diverse candidates. Recent work has explored diverse beam search<sup id="fnref2:24"><a class="footnote-ref" href="#fn:24">24</a></sup> <sup id="fnref2:25"><a class="footnote-ref" href="#fn:25">25</a></sup> <sup id="fnref2:26"><a class="footnote-ref" href="#fn:26">26</a></sup>. These methods
 address the reduction of number of duplicate sequences to varying extents, thereby increasing the entropy of generated sequences.</p>
 <p><strong>Stochastic decoding.</strong> A separate class of decoding methods sample from the model at generation time,
-<span><span class="MathJax_Preview">y_t \sim q(y_t | y_{&lt;t}, x, p_{\theta})</span><script type="math/tex">y_t \sim q(y_t | y_{<t}, x, p_{\theta})</script></span>. This method has shown to be effective at generating diverse samples and can better explore target design spaces. We consider a top-<span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> sampler<sup id="fnref2:27"><a class="footnote-ref" href="#fn:27">27</a></sup>, which
-restricts sampling to the <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> most-probable tokens at time-step <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>. This corresponds to restricting sampling to a subset of the vocabulary <span><span class="MathJax_Preview">U \subset V</span><script type="math/tex">U \subset V</script></span>. <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> is the subset of <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> that maximizes <span><span class="MathJax_Preview">\sum_{y \in U} p_{\theta}(y_t | y_{y&lt;t}, x)</span><script type="math/tex">\sum_{y \in U} p_{\theta}(y_t | y_{y<t}, x)</script></span>:</p>
-<p><script type="math/tex; mode=display">
-q(y_t | y_{&lt;t}, x, p_{\theta}) =  <script type="math/tex; mode=display">\begin{cases} 
-      \frac{p_{\theta}(y_t | y_{<t}, x)}{Z} & y_t \in U \\
-      0 & \text{otherwise}
-   \end{cases}</script>
-</script></p>
+<span class="arithmatex">\(y_t \sim q(y_t | y_{&lt;t}, x, p_{\theta})\)</span>. This method has shown to be effective at generating diverse samples and can better explore target design spaces. We consider a top-<span class="arithmatex">\(k\)</span> sampler<sup id="fnref2:27"><a class="footnote-ref" href="#fn:27">27</a></sup>, which
+restricts sampling to the <span class="arithmatex">\(k\)</span> most-probable tokens at time-step <span class="arithmatex">\(t\)</span>. This corresponds to restricting sampling to a subset of the vocabulary <span class="arithmatex">\(U \subset V\)</span>. <span class="arithmatex">\(U\)</span> is the subset of <span class="arithmatex">\(V\)</span> that maximizes <span class="arithmatex">\(\sum_{y \in U} p_{\theta}(y_t | y_{y&lt;t}, x)\)</span>:</p>
+<div class="arithmatex">\[
+q(y_t | y_{&lt;t}, x, p_{\theta}) =  \begin{cases} 
+      \frac{p_{\theta}(y_t | y_{&lt;t}, x)}{Z} &amp; y_t \in U \\
+      0 &amp; \text{otherwise}
+   \end{cases}
+\]</div>
 <h3 id="recursive-inference">Recursive inference</h3>
-<p>We are given <span><span class="MathJax_Preview">(x,y) \in (X,Y)</span><script type="math/tex">(x,y) \in (X,Y)</script></span> as a sequence pair where by construction
-<span><span class="MathJax_Preview">(x,y)</span><script type="math/tex">(x,y)</script></span> has high chemical similarity and <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> scores higher on a
-prespecified property compared to <span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>. At test time, we are interested
-in recursively inferring new sequences. Let <span><span class="MathJax_Preview">y_i</span><script type="math/tex">y_i</script></span> denote a random
-sequence for recursive iteration <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>. Let <span><span class="MathJax_Preview">\{y_i^{(k)}\}_{k=1}^K</span><script type="math/tex">\{y_i^{(k)}\}_{k=1}^K</script></span> be a
-set of <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> outputs generated from <span><span class="MathJax_Preview">p_{\theta}(y_i|x)</span><script type="math/tex">p_{\theta}(y_i|x)</script></span> when <span><span class="MathJax_Preview">i=0</span><script type="math/tex">i=0</script></span>. We use
-a scoring function <span><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> to compute the best of <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> outputs denoted as
-<span><span class="MathJax_Preview">\hat{y}_i</span><script type="math/tex">\hat{y}_i</script></span>. For <span><span class="MathJax_Preview">i&gt;0</span><script type="math/tex">i>0</script></span>, we infer <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> outputs from
-<span><span class="MathJax_Preview">p_{\theta}(y_i|\hat{y}_{i-1})</span><script type="math/tex">p_{\theta}(y_i|\hat{y}_{i-1})</script></span>. This process is repeated for <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>
+<p>We are given <span class="arithmatex">\((x,y) \in (X,Y)\)</span> as a sequence pair where by construction
+<span class="arithmatex">\((x,y)\)</span> has high chemical similarity and <span class="arithmatex">\(y\)</span> scores higher on a
+prespecified property compared to <span class="arithmatex">\(x\)</span>. At test time, we are interested
+in recursively inferring new sequences. Let <span class="arithmatex">\(y_i\)</span> denote a random
+sequence for recursive iteration <span class="arithmatex">\(i\)</span>. Let <span class="arithmatex">\(\{y_i^{(k)}\}_{k=1}^K\)</span> be a
+set of <span class="arithmatex">\(K\)</span> outputs generated from <span class="arithmatex">\(p_{\theta}(y_i|x)\)</span> when <span class="arithmatex">\(i=0\)</span>. We use
+a scoring function <span class="arithmatex">\(S\)</span> to compute the best of <span class="arithmatex">\(K\)</span> outputs denoted as
+<span class="arithmatex">\(\hat{y}_i\)</span>. For <span class="arithmatex">\(i&gt;0\)</span>, we infer <span class="arithmatex">\(K\)</span> outputs from
+<span class="arithmatex">\(p_{\theta}(y_i|\hat{y}_{i-1})\)</span>. This process is repeated for <span class="arithmatex">\(n\)</span>
 iterations.</p>
-<p><strong>Scoring functions.</strong> In principle, all <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> outputs at iteration <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>
+<p><strong>Scoring functions.</strong> In principle, all <span class="arithmatex">\(K\)</span> outputs at iteration <span class="arithmatex">\(i\)</span>
 can be independently conditioned on to generate new candidates for
-iteration <span><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span>. This procedure scales exponentially with respect to
-space and time as a function of <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> iterations. Therefore, we introduce
-a suite of simple ranking strategies to score <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> output sequences to
+iteration <span class="arithmatex">\(i+1\)</span>. This procedure scales exponentially with respect to
+space and time as a function of <span class="arithmatex">\(n\)</span> iterations. Therefore, we introduce
+a suite of simple ranking strategies to score <span class="arithmatex">\(K\)</span> output sequences to
 decide which output becomes the next iteration’s source sequence. We
 consider a likelihood based ranking as well as several
 chemistry-specific metrics further described in the experiments.
@@ -695,10 +838,10 @@ Designing well-informed scoring functions can help calibrate the
 distributional statistics of generated sequences, aid in multi-property
 optimization, and provide interpretable sequences of iteratively optimal
 translations.</p>
-<p><strong>Ensemble outputs.</strong> After <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> recursive iterations, we ensemble the
-generated outputs <span><span class="MathJax_Preview">\{y_0, y_1, \dots, y_n\}_{k=1}^K</span><script type="math/tex">\{y_0, y_1, \dots, y_n\}_{k=1}^K</script></span> and score the
+<p><strong>Ensemble outputs.</strong> After <span class="arithmatex">\(n\)</span> recursive iterations, we ensemble the
+generated outputs <span class="arithmatex">\(\{y_0, y_1, \dots, y_n\}_{k=1}^K\)</span> and score the
 sequences on a desired objective. For property optimization, we return
-the <span><span class="MathJax_Preview">\operatorname{argmax}</span><script type="math/tex">\operatorname{argmax}</script></span>. In principle, BBRT is not limited to ensembling recursive
+the <span class="arithmatex">\(\operatorname{argmax}\)</span>. In principle, BBRT is not limited to ensembling recursive
 outputs from a <em>single</em> model. Different modeling choices and molecular
 representations have different inductive biases, which influence the
 diversity of generated compounds. BBRT can capitalize on these
@@ -733,10 +876,10 @@ using deterministic and stochastic decoding strategies described in .
 For graphs, we use a tree-based molecular representation<sup id="fnref4:5"><a class="footnote-ref" href="#fn:5">5</a></sup>
 with the exact architecture described in Jin et al. 2019<sup id="fnref6:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Decoding is
 performed using a probabilistic extension with latent variables
-described in Jin et al. 2019<sup id="fnref7:3"><a class="footnote-ref" href="#fn:3">3</a></sup> -- we sample from the prior <span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> times followed by left-to-right greedy decoding.</p>
-<p><strong>Data</strong>. We construct training data by sampling molecular pairs <span><span class="MathJax_Preview">(X,Y)</span><script type="math/tex">(X,Y)</script></span>
-with molecular similarity <span><span class="MathJax_Preview">sim(X,Y) &gt; \tau</span><script type="math/tex">sim(X,Y) > \tau</script></span> and property improvement
-<span><span class="MathJax_Preview">\delta(Y) &gt; \delta(X)</span><script type="math/tex">\delta(Y) > \delta(X)</script></span> for a given property <span><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span>. Constructing
+described in Jin et al. 2019<sup id="fnref7:3"><a class="footnote-ref" href="#fn:3">3</a></sup> -- we sample from the prior <span class="arithmatex">\(k\)</span> times followed by left-to-right greedy decoding.</p>
+<p><strong>Data</strong>. We construct training data by sampling molecular pairs <span class="arithmatex">\((X,Y)\)</span>
+with molecular similarity <span class="arithmatex">\(sim(X,Y) &gt; \tau\)</span> and property improvement
+<span class="arithmatex">\(\delta(Y) &gt; \delta(X)\)</span> for a given property <span class="arithmatex">\(\delta\)</span>. Constructing
 training pairs with a similarity constraint can help avoid degenerate
 mappings. In contrast to Jin et al. (2019)<sup id="fnref8:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, we only enforce the similarity
 constraint for the construction of training pairs. Similarity
@@ -760,7 +903,7 @@ set translation task, we evaluate this model for unconstrained
 optimization. We extracted a training set of 88K molecule pairs. We
 report the details on how these properties were computed in <a href="#a-recursive-penalized-logp-experiments">Appendix A</a>.</p>
 <p><strong>Scoring functions</strong>. Here we describe scoring functions that are used
-to rank <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> outputs for recursive iteration <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>. The highest scoring
+to rank <span class="arithmatex">\(K\)</span> outputs for recursive iteration <span class="arithmatex">\(i\)</span>. The highest scoring
 sequence is used as the next iteration’s source compound.</p>
 <ul>
 <li>
@@ -790,27 +933,24 @@ sequence is used as the next iteration’s source compound.</p>
     increasing the molecular weight (Figure [fig:rank<sub>g</sub>2g]).</p>
 </li>
 </ul>
-<p>Diversity is computed as follows. Let <span><span class="MathJax_Preview">Y</span><script type="math/tex">Y</script></span> be a set of translated compounds. Consistent with the literature<sup id="fnref:40"><a class="footnote-ref" href="#fn:40">40</a></sup> we report diversity as:</p>
-<div>
-<div class="MathJax_Preview">\text{DIV}(Y) = \frac{1}{|Y|(|Y|-1)} \sum_{y \in Y} \sum_{y' \in Y, y'} 1 - \delta(y,y')</div>
-<script type="math/tex; mode=display">\text{DIV}(Y) = \frac{1}{|Y|(|Y|-1)} \sum_{y \in Y} \sum_{y' \in Y, y'} 1 - \delta(y,y')</script>
-</div>
-<p>where <span><span class="MathJax_Preview">\delta</span><script type="math/tex">\delta</script></span> is the Tanimoto similarity computed on the Morgan fingerprints of <span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> and <span><span class="MathJax_Preview">y'</span><script type="math/tex">y'</script></span>.</p>
+<p>Diversity is computed as follows. Let <span class="arithmatex">\(Y\)</span> be a set of translated compounds. Consistent with the literature<sup id="fnref:40"><a class="footnote-ref" href="#fn:40">40</a></sup> we report diversity as:</p>
+<div class="arithmatex">\[\text{DIV}(Y) = \frac{1}{|Y|(|Y|-1)} \sum_{y \in Y} \sum_{y' \in Y, y'} 1 - \delta(y,y')\]</div>
+<p>where <span class="arithmatex">\(\delta\)</span> is the Tanimoto similarity computed on the Morgan fingerprints of <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(y'\)</span>.</p>
 <h3 id="molecule-generation-results">Molecule generation results</h3>
 <p><strong>Setup.</strong> For property optimization, the goal is to generate compounds
 with the highest possible penalized logP and QED values. For notation,
 we denote BBRT applied to model X as "BBRT-X". We consider BBRT-JTNN
 and BBRT-Seq2Seq under 3 decoding strategies and 4 scoring functions.
 For the logP task, we seed our translations with 900 maximally diverse
-compounds with an average pairwise diversity of <span><span class="MathJax_Preview">0.94 \pm{0.04}</span><script type="math/tex">0.94 \pm{0.04}</script></span>
-relative to <span><span class="MathJax_Preview">0.86 \pm{0.04}</span><script type="math/tex">0.86 \pm{0.04}</script></span>, which is the average pairwise diversity of
+compounds with an average pairwise diversity of <span class="arithmatex">\(0.94 \pm{0.04}\)</span>
+relative to <span class="arithmatex">\(0.86 \pm{0.04}\)</span>, which is the average pairwise diversity of
 the training data. Maximally diverse compounds were computed using the
 MaxMin algorithm <sup id="fnref:41"><a class="footnote-ref" href="#fn:41">41</a></sup> on Morgan fingerprints. We found seeding
 our translations with diverse compounds helped BBRT generate higher
 scoring compounds:</p>
 <p><img src="../img/seed_choice.png" alt="bbrt-seed-choice" width="800"/></p>
 <p><center><small><b>Figure 2:</b> <strong>(A)</strong>: Applying BBRT-Seq2Seq to three seed sequence sets with 100 samples each. The MaxMin algorithm was used to select samples with varying levels of diversity (max: 0.94, avg: 0.96, and min: 0.78). For each input sequence, we sampled 100 times from a top-5 sampler and ranked samples using logP. Standard error is reported by averaging over 10 BBRT-Seq2Seq runs with different seed sets. <strong>(B)</strong>: Applying BBRT-Seq2Seq to three seed sequence sets with 100 samples each and varying logP values (low: logP values &lt; 1, medium: [-1 1], high: values &gt; 1). Standard error is reported by averaging over 10 runs each with a randomly chosen set of seed sequences.</small></center></p>
-<p>For both BBRT applications, we sampled 100 complete sequences from a top-<span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span> and from a top-<span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span> sampler and then aggregated these outputs with a beam search using 20 beams outputting 20 sequences.</p>
+<p>For both BBRT applications, we sampled 100 complete sequences from a top-<span class="arithmatex">\(2\)</span> and from a top-<span class="arithmatex">\(5\)</span> sampler and then aggregated these outputs with a beam search using 20 beams outputting 20 sequences.</p>
 <p><strong>Baselines.</strong> We compare our method with the following state-of-the-art
 baselines. Junction Tree VAE (JT-VAE)<sup id="fnref6:5"><a class="footnote-ref" href="#fn:5">5</a></sup> combines a
 graph-based representation with latent variables for molecular graph
@@ -1001,14 +1141,14 @@ When optimizing for logP, a logP scoring function quickly discovers the
 best scoring compounds while secondary scoring functions improve logP at
 a slower rate and do not converge to the same scores (<strong>Figure 5A. Right</strong>). This trade-off highlights the role of conflicting molecular design objectives.</p>
 <p>For <strong>Figure 5A</strong>, the standard deviation typically
-decreased with iteration number <span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>. Property values concentrate to a
+decreased with iteration number <span class="arithmatex">\(n\)</span>. Property values concentrate to a
 certain range. With property values concentrating, it is reasonable to
 question whether BBRT produces compounds with less diversity. In Figure
 <strong>Figure 5B</strong> we show average pairwise diversity of translated
 outputs per recursive iteration across 3 decoding strategies and observe
 decay in diversity for logP. For the best performing decoding strategy,
-the top-<span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span> sampler, diversity decays from about 0.86 after a single
-translation to about 0.78 after <span><span class="MathJax_Preview">n=25</span><script type="math/tex">n=25</script></span> recursive translations. This
+the top-<span class="arithmatex">\(5\)</span> sampler, diversity decays from about 0.86 after a single
+translation to about 0.78 after <span class="arithmatex">\(n=25\)</span> recursive translations. This
 decay may be a product of the data -- higher logP values tend to be less
 diverse than a random set of compounds. For QED (<strong>Figure 5B. Right</strong>), we observe limited decay. Differences indecay rate might be attributed to task variability: one being explorative and the other interpolative.</p>
 <h3 id="interpretable-user-centric-optimization">Interpretable, user-centric optimization</h3>
@@ -1055,7 +1195,7 @@ using the same setup and observe that optimizing logP still
 significantly improves the QED values of generated compounds. This
 method also discovers the same maximum QED value as scoring by QED. This
 improvement, however, has trade-offs in the limit for average QED values
-generated. After <span><span class="MathJax_Preview">n=15</span><script type="math/tex">n=15</script></span> recursive iterations the <em>average</em> QED values of
+generated. After <span class="arithmatex">\(n=15\)</span> recursive iterations the <em>average</em> QED values of
 the generated compounds under a logP scoring function converge to lower
 values relative to QED values for compounds scored by QED for all three
 decoding strategies. We repeat this experiment with JTNN and show
@@ -1064,13 +1204,13 @@ similar effects:</p>
 <center><small><b>Figure 8:</b> Applying BBRT-JTNN to secondary property optimization. QED is the primary target and logP is the secondary property. <strong>(Left)</strong>: Average logP as a function of recursive iteration under two scoring functions---QED and logP. <strong>(Right)</strong>: Average QED as a function of recursive iteration for same two scoring functions.</small></center></p>
 <p>Secondary property optimization by ranking extends to variables that are
 at minimum loosely positively correlated. For QED optimization, the
-average logP value for unoptimized QED compounds is <span><span class="MathJax_Preview">0.30 \pm{1.96}</span><script type="math/tex">0.30 \pm{1.96}</script></span>
+average logP value for unoptimized QED compounds is <span class="arithmatex">\(0.30 \pm{1.96}\)</span>
 while for optimized QED compounds the average logP value is
-<span><span class="MathJax_Preview">0.79 \pm{1.45}</span><script type="math/tex">0.79 \pm{1.45}</script></span>. Additionally, QED compounds in the target range [0.9
+<span class="arithmatex">\(0.79 \pm{1.45}\)</span>. Additionally, QED compounds in the target range [0.9
 1.0] in the training data had a positive correlation between its logP
-and QED values (Spearman rank correlation; <span><span class="MathJax_Preview">\rho=0.07</span><script type="math/tex">\rho=0.07</script></span> <span><span class="MathJax_Preview">P &lt; 0.026</span><script type="math/tex">P < 0.026</script></span>).
+and QED values (Spearman rank correlation; <span class="arithmatex">\(\rho=0.07\)</span> <span class="arithmatex">\(P &lt; 0.026\)</span>).
 This correlation did not hold for QED compounds in the range [0.7 0.8]
-unoptimized QED compounds (<span><span class="MathJax_Preview">\rho=0.007</span><script type="math/tex">\rho=0.007</script></span>, <span><span class="MathJax_Preview">P&lt;0.8</span><script type="math/tex">P<0.8</script></span>).</p>
+unoptimized QED compounds (<span class="arithmatex">\(\rho=0.007\)</span>, <span class="arithmatex">\(P&lt;0.8\)</span>).</p>
 <h2 id="future-work">Future work</h2>
 <p>We develop BBRT for molecular optimization. BBRT is a simple algorithm
 that feeds the output of translation models back into the same model for
@@ -1118,16 +1258,16 @@ a population of 900 sequences per iteration..</small></center></p>
 <hr />
 <ol>
 <li id="fn:1">
-<p>Sunghwan Kim, Paul A Thiessen, Evan E Bolton, Jie Chen, Gang Fu, Asta Gindulyte, Lianyi Han, Jane He, Siqian He, Benjamin A Shoemaker, and others. Pubchem substance and compound databases. <em>Nucleic acids research</em>, 44<span><span class="MathJax_Preview">D1</span><script type="math/tex">D1</script></span>:D1202–D1213, 2015.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Sunghwan Kim, Paul A Thiessen, Evan E Bolton, Jie Chen, Gang Fu, Asta Gindulyte, Lianyi Han, Jane He, Siqian He, Benjamin A Shoemaker, and others. Pubchem substance and compound databases. <em>Nucleic acids research</em>, 44<span class="arithmatex">\(D1\)</span>:D1202–D1213, 2015.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>Pavel G Polishchuk, Timur I Madzhidov, and Alexandre Varnek. Estimation of the size of drug-like chemical space based on gdb-17 data. <em>Journal of computer-aided molecular design</em>, 27<span><span class="MathJax_Preview">8</span><script type="math/tex">8</script></span>:675–679, 2013.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p>Pavel G Polishchuk, Timur I Madzhidov, and Alexandre Varnek. Estimation of the size of drug-like chemical space based on gdb-17 data. <em>Journal of computer-aided molecular design</em>, 27<span class="arithmatex">\(8\)</span>:675–679, 2013.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
 <p>Wengong Jin, Kevin Yang, Regina Barzilay, and Tommi Jaakkola. Learning multimodal graph-to-graph translation for molecule optimization. In <em>International Conference on Learning Representations</em>. 2019.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref10:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref11:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref12:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref13:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref14:3" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref15:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p>Rafael Gómez-Bombarelli, Jennifer N Wei, David Duvenaud, José Miguel Hernández-Lobato, Benjamín Sánchez-Lengeling, Dennis Sheberla, Jorge Aguilera-Iparraguirre, Timothy D Hirzel, Ryan P Adams, and Alán Aspuru-Guzik. Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules. <em>ACS Central Science</em>, 4<span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>:268–276, January 2018.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Rafael Gómez-Bombarelli, Jennifer N Wei, David Duvenaud, José Miguel Hernández-Lobato, Benjamín Sánchez-Lengeling, Dennis Sheberla, Jorge Aguilera-Iparraguirre, Timothy D Hirzel, Ryan P Adams, and Alán Aspuru-Guzik. Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules. <em>ACS Central Science</em>, 4<span class="arithmatex">\(2\)</span>:268–276, January 2018.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:4" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
 <p>Wengong Jin, Regina Barzilay, and Tommi Jaakkola. Junction tree variational autoencoder for molecular graph generation. In <em>International Conference on Machine Learning</em>, 2328–2337. 2018.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
@@ -1151,25 +1291,25 @@ a population of 900 sequences per iteration..</small></center></p>
 <p>Ari Seff, Wenda Zhou, Farhan Damani, Abigail Doyle, and Ryan P Adams. Discrete Object Generation with Reversible Inductive Construction. <em>arXiv.org</em>, July 2019. <a href="https://arxiv.org/abs/1907.08268v1">arXiv:1907.08268v1</a>.&#160;<a class="footnote-backref" href="#fnref:11" title="Jump back to footnote 11 in the text">&#8617;</a></p>
 </li>
 <li id="fn:12">
-<p>Mariya Popova, Olexandr Isayev, and Alexander Tropsha. Deep reinforcement learning for de novo drug design. <em>Science Advances</em>, 4<span><span class="MathJax_Preview">7</span><script type="math/tex">7</script></span>:eaap7885, July 2018.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
+<p>Mariya Popova, Olexandr Isayev, and Alexander Tropsha. Deep reinforcement learning for de novo drug design. <em>Science Advances</em>, 4<span class="arithmatex">\(7\)</span>:eaap7885, July 2018.&#160;<a class="footnote-backref" href="#fnref:12" title="Jump back to footnote 12 in the text">&#8617;</a></p>
 </li>
 <li id="fn:13">
-<p>Zhenpeng Zhou, Steven Kearnes, Li Li, Richard N Zare, and Patrick Riley. Optimization of Molecules via Deep Reinforcement Learning. <em>Scientific reports</em>, 9<span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>:10752, July 2019.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
+<p>Zhenpeng Zhou, Steven Kearnes, Li Li, Richard N Zare, and Patrick Riley. Optimization of Molecules via Deep Reinforcement Learning. <em>Scientific reports</em>, 9<span class="arithmatex">\(1\)</span>:10752, July 2019.&#160;<a class="footnote-backref" href="#fnref:13" title="Jump back to footnote 13 in the text">&#8617;</a></p>
 </li>
 <li id="fn:14">
 <p>Jonas Mueller, David Gifford, and Tommi Jaakkola. Sequence to better sequence: continuous revision of combinatorial structures. In <em>International Conference on Machine Learning</em>, 2536–2544. 2017.&#160;<a class="footnote-backref" href="#fnref:14" title="Jump back to footnote 14 in the text">&#8617;</a></p>
 </li>
 <li id="fn:15">
-<p>Christian Kramer, Julian E Fuchs, Steven Whitebread, Peter Gedeck, and Klaus R Liedl. Matched Molecular Pair Analysis: Significance and the Impact of Experimental Uncertainty. <em>Journal of Medicinal Chemistry</em>, 57<span><span class="MathJax_Preview">9</span><script type="math/tex">9</script></span>:3786–3802, April 2014.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
+<p>Christian Kramer, Julian E Fuchs, Steven Whitebread, Peter Gedeck, and Klaus R Liedl. Matched Molecular Pair Analysis: Significance and the Impact of Experimental Uncertainty. <em>Journal of Medicinal Chemistry</em>, 57<span class="arithmatex">\(9\)</span>:3786–3802, April 2014.&#160;<a class="footnote-backref" href="#fnref:15" title="Jump back to footnote 15 in the text">&#8617;</a></p>
 </li>
 <li id="fn:16">
-<p>Samo Turk, Benjamin Merget, Friedrich Rippmann, and Simone Fulle. Coupling Matched Molecular Pairs with Machine Learning for Virtual Compound Optimization. <em>Journal of Chemical Information and Modeling</em>, 57<span><span class="MathJax_Preview">12</span><script type="math/tex">12</script></span>:3079–3085, dec 2017. <a href="https://doi.org/10.1021/acs.jcim.7b00298">doi:10.1021/acs.jcim.7b00298</a>.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
+<p>Samo Turk, Benjamin Merget, Friedrich Rippmann, and Simone Fulle. Coupling Matched Molecular Pairs with Machine Learning for Virtual Compound Optimization. <em>Journal of Chemical Information and Modeling</em>, 57<span class="arithmatex">\(12\)</span>:3079–3085, dec 2017. <a href="https://doi.org/10.1021/acs.jcim.7b00298">doi:10.1021/acs.jcim.7b00298</a>.&#160;<a class="footnote-backref" href="#fnref:16" title="Jump back to footnote 16 in the text">&#8617;</a></p>
 </li>
 <li id="fn:17">
 <p>Christian Tyrchan and Emma Evertsson. Matched Molecular Pair Analysis in Short: Algorithms, Applications and Limitations. <em>Computational and Structural Biotechnology Journal</em>, 15:86–90, jan 2017. <a href="https://doi.org/10.1016/j.csbj.2016.12.003">doi:10.1016/j.csbj.2016.12.003</a>.&#160;<a class="footnote-backref" href="#fnref:17" title="Jump back to footnote 17 in the text">&#8617;</a></p>
 </li>
 <li id="fn:18">
-<p>Hugo Kubinyi. Free wilson analysis. theory, applications and its relationship to hansch analysis. <em>Quantitative Structure-Activity Relationships</em>, 7<span><span class="MathJax_Preview">3</span><script type="math/tex">3</script></span>:121–133, 1988.&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
+<p>Hugo Kubinyi. Free wilson analysis. theory, applications and its relationship to hansch analysis. <em>Quantitative Structure-Activity Relationships</em>, 7<span class="arithmatex">\(3\)</span>:121–133, 1988.&#160;<a class="footnote-backref" href="#fnref:18" title="Jump back to footnote 18 in the text">&#8617;</a></p>
 </li>
 <li id="fn:19">
 <p>Marco Tulio Ribeiro, Sameer Singh, and Carlos Guestrin. Why should i trust you?: explaining the predictions of any classifier. <em>Proceedings of the 22<sup>nd</sup> ACM SIGKDD International Conference on Knowledge Discovery and Data Mining - KDD ’16</em>, 2016.&#160;<a class="footnote-backref" href="#fnref:19" title="Jump back to footnote 19 in the text">&#8617;</a></p>
@@ -1202,7 +1342,7 @@ a population of 900 sequences per iteration..</small></center></p>
 <p>Sam Wiseman, Stuart Shieber, and Alexander Rush. Learning neural templates for text generation. In <em>Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing</em>, 3174–3187. 2018.&#160;<a class="footnote-backref" href="#fnref:28" title="Jump back to footnote 28 in the text">&#8617;</a></p>
 </li>
 <li id="fn:29">
-<p>Shiqi Shen, Yong Cheng, Zhongjun He, Wei He, Hua Wu, Maosong Sun, and Yang Liu. Minimum risk training for neural machine translation. In <em>Proceedings of the 54<sup>th</sup> Annual Meeting of the Association for Computational Linguistics <span><span class="MathJax_Preview">Volume 1: Long Papers</span><script type="math/tex">Volume 1: Long Papers</script></span></em>, 1683–1692. 2016.&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+<p>Shiqi Shen, Yong Cheng, Zhongjun He, Wei He, Hua Wu, Maosong Sun, and Yang Liu. Minimum risk training for neural machine translation. In <em>Proceedings of the 54<sup>th</sup> Annual Meeting of the Association for Computational Linguistics <span class="arithmatex">\(Volume 1: Long Papers\)</span></em>, 1683–1692. 2016.&#160;<a class="footnote-backref" href="#fnref:29" title="Jump back to footnote 29 in the text">&#8617;</a></p>
 </li>
 <li id="fn:30">
 <p>Dzmitry Bahdanau, Philemon Brakel, Kelvin Xu, Anirudh Goyal, Ryan Lowe, Joelle Pineau, Aaron Courville, and Yoshua Bengio. An Actor-Critic Algorithm for Sequence Prediction. In <em>International Conference on Learning Representations</em>. 2017.&#160;<a class="footnote-backref" href="#fnref:30" title="Jump back to footnote 30 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:30" title="Jump back to footnote 30 in the text">&#8617;</a></p>
@@ -1220,31 +1360,31 @@ a population of 900 sequences per iteration..</small></center></p>
 <p>Nicolas Boulanger-Lewandowski, Yoshua Bengio, and Pascal Vincent. Audio Chord Recognition with Recurrent Neural Networks. <em>ISMIR</em>, 2013.&#160;<a class="footnote-backref" href="#fnref:34" title="Jump back to footnote 34 in the text">&#8617;</a></p>
 </li>
 <li id="fn:35">
-<p>Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. <em>Neural Computation</em>, 9<span><span class="MathJax_Preview">8</span><script type="math/tex">8</script></span>:1735–1780, November 1997.&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 35 in the text">&#8617;</a></p>
+<p>Sepp Hochreiter and Jürgen Schmidhuber. Long short-term memory. <em>Neural Computation</em>, 9<span class="arithmatex">\(8\)</span>:1735–1780, November 1997.&#160;<a class="footnote-backref" href="#fnref:35" title="Jump back to footnote 35 in the text">&#8617;</a></p>
 </li>
 <li id="fn:36">
-<p>David Rogers and Mathew Hahn. Extended-connectivity fingerprints. <em>Journal of chemical information and modeling</em>, 50<span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span>:742–754, 2010.&#160;<a class="footnote-backref" href="#fnref:36" title="Jump back to footnote 36 in the text">&#8617;</a></p>
+<p>David Rogers and Mathew Hahn. Extended-connectivity fingerprints. <em>Journal of chemical information and modeling</em>, 50<span class="arithmatex">\(5\)</span>:742–754, 2010.&#160;<a class="footnote-backref" href="#fnref:36" title="Jump back to footnote 36 in the text">&#8617;</a></p>
 </li>
 <li id="fn:37">
-<p>John J Irwin, Teague Sterling, Michael M Mysinger, Erin S Bolstad, and Ryan G Coleman. ZINC: A Free Tool to Discover Chemistry for Biology. <em>Journal of Chemical Information and Modeling</em>, 52<span><span class="MathJax_Preview">7</span><script type="math/tex">7</script></span>:1757–1768, 2012.&#160;<a class="footnote-backref" href="#fnref:37" title="Jump back to footnote 37 in the text">&#8617;</a></p>
+<p>John J Irwin, Teague Sterling, Michael M Mysinger, Erin S Bolstad, and Ryan G Coleman. ZINC: A Free Tool to Discover Chemistry for Biology. <em>Journal of Chemical Information and Modeling</em>, 52<span class="arithmatex">\(7\)</span>:1757–1768, 2012.&#160;<a class="footnote-backref" href="#fnref:37" title="Jump back to footnote 37 in the text">&#8617;</a></p>
 </li>
 <li id="fn:38">
 <p>Jiaxuan You, Bowen Liu, Zhitao Ying, Vijay Pande, and Jure Leskovec. Graph convolutional policy network for goal-directed molecular graph generation. In <em>Advances in Neural Information Processing Systems</em>, 6410–6421. 2018.&#160;<a class="footnote-backref" href="#fnref:38" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:38" title="Jump back to footnote 38 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:38" title="Jump back to footnote 38 in the text">&#8617;</a></p>
 </li>
 <li id="fn:39">
-<p>G Richard Bickerton, Gaia V Paolini, Jérémy Besnard, Sorel Muresan, and Andrew L Hopkins. Quantifying the chemical beauty of drugs. <em>Nature chemistry</em>, 4<span><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>:90, 2012.&#160;<a class="footnote-backref" href="#fnref:39" title="Jump back to footnote 39 in the text">&#8617;</a></p>
+<p>G Richard Bickerton, Gaia V Paolini, Jérémy Besnard, Sorel Muresan, and Andrew L Hopkins. Quantifying the chemical beauty of drugs. <em>Nature chemistry</em>, 4<span class="arithmatex">\(2\)</span>:90, 2012.&#160;<a class="footnote-backref" href="#fnref:39" title="Jump back to footnote 39 in the text">&#8617;</a></p>
 </li>
 <li id="fn:40">
 <p>Wengong Jin, Regina Barzilay, and Tommi Jaakkola. Multi-resolution Autoregressive Graph-to-Graph Translation for Molecules. <em>arXiv.org</em>, June 2019. <a href="https://arxiv.org/abs/1907.11223v1">arXiv:1907.11223v1</a>.&#160;<a class="footnote-backref" href="#fnref:40" title="Jump back to footnote 40 in the text">&#8617;</a></p>
 </li>
 <li id="fn:41">
-<p>Mark Ashton, John Barnard, Florence Casset, Michael Charlton, Geoffrey Downs, Dominique Gorse, John Holliday, Roger Lahana, and Peter Willett. Identification of diverse database subsets using Property-Based and Fragment-Based molecular descriptions. <em>Quant. Struct.-Act.Relat.</em>, 21<span><span class="MathJax_Preview">6</span><script type="math/tex">6</script></span>:598–604, December 2002.&#160;<a class="footnote-backref" href="#fnref:41" title="Jump back to footnote 41 in the text">&#8617;</a></p>
+<p>Mark Ashton, John Barnard, Florence Casset, Michael Charlton, Geoffrey Downs, Dominique Gorse, John Holliday, Roger Lahana, and Peter Willett. Identification of diverse database subsets using Property-Based and Fragment-Based molecular descriptions. <em>Quant. Struct.-Act.Relat.</em>, 21<span class="arithmatex">\(6\)</span>:598–604, December 2002.&#160;<a class="footnote-backref" href="#fnref:41" title="Jump back to footnote 41 in the text">&#8617;</a></p>
 </li>
 <li id="fn:42">
-<p>Gabriel Lima Guimaraes, Benjamín Sánchez-Lengeling, Carlos Outeiral, Pedro Luis Cunha Farias, and Alán Aspuru-Guzik. Objective-Reinforced Generative Adversarial Networks <span><span class="MathJax_Preview">ORGAN</span><script type="math/tex">ORGAN</script></span> for Sequence Generation Models. <em>arXiv.org</em>, May 2017. <a href="https://arxiv.org/abs/1705.10843v3">arXiv:1705.10843v3</a>.&#160;<a class="footnote-backref" href="#fnref:42" title="Jump back to footnote 42 in the text">&#8617;</a></p>
+<p>Gabriel Lima Guimaraes, Benjamín Sánchez-Lengeling, Carlos Outeiral, Pedro Luis Cunha Farias, and Alán Aspuru-Guzik. Objective-Reinforced Generative Adversarial Networks <span class="arithmatex">\(ORGAN\)</span> for Sequence Generation Models. <em>arXiv.org</em>, May 2017. <a href="https://arxiv.org/abs/1705.10843v3">arXiv:1705.10843v3</a>.&#160;<a class="footnote-backref" href="#fnref:42" title="Jump back to footnote 42 in the text">&#8617;</a></p>
 </li>
 <li id="fn:43">
-<p>David Weininger. Smiles, a chemical language and information system. 1. introduction to methodology and encoding rules. <em>Journal of chemical information and computer sciences</em>, 28<span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>:31–36, 1988.&#160;<a class="footnote-backref" href="#fnref:43" title="Jump back to footnote 43 in the text">&#8617;</a></p>
+<p>David Weininger. Smiles, a chemical language and information system. 1. introduction to methodology and encoding rules. <em>Journal of chemical information and computer sciences</em>, 28<span class="arithmatex">\(1\)</span>:31–36, 1988.&#160;<a class="footnote-backref" href="#fnref:43" title="Jump back to footnote 43 in the text">&#8617;</a></p>
 </li>
 <li id="fn:44">
 <p>Ksenia Korovina, Sailun Xu, Kirthevasan Kandasamy, Willie Neiswanger, Barnabas Poczos, Jeff Schneider, and Eric P Xing. ChemBO: Bayesian Optimization of Small Organic Molecules with Synthesizable Recommendations. <em>arXiv.org</em>, August 2019. <a href="https://arxiv.org/abs/1908.01425v2">arXiv:1908.01425v2</a>.&#160;<a class="footnote-backref" href="#fnref:44" title="Jump back to footnote 44 in the text">&#8617;</a></p>
@@ -1256,10 +1396,10 @@ a population of 900 sequences per iteration..</small></center></p>
 <p>Spencer M Free and James W Wilson. A Mathematical Contribution to Structure-Activity Studies. <em>Journal of Medicinal Chemistry</em>, 7:395–399, July 1964.&#160;<a class="footnote-backref" href="#fnref:46" title="Jump back to footnote 46 in the text">&#8617;</a></p>
 </li>
 <li id="fn:47">
-<p>Mats Eriksson, Hongming Chen, Lars Carlsson, J. Willem M. Nissink, John G. Cumming, and Ingemar Nilsson. Beyond the Scope of Free-Wilson Analysis. 2: Can Distance Encoded R-Group Fingerprints Provide Interpretable Nonlinear Models? <em>Journal of Chemical Information and Modeling</em>, 54<span><span class="MathJax_Preview">4</span><script type="math/tex">4</script></span>:1117–1128, 2014. <a href="https://doi.org/10.1021/ci500075q">doi:10.1021/ci500075q</a>.&#160;<a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 47 in the text">&#8617;</a></p>
+<p>Mats Eriksson, Hongming Chen, Lars Carlsson, J. Willem M. Nissink, John G. Cumming, and Ingemar Nilsson. Beyond the Scope of Free-Wilson Analysis. 2: Can Distance Encoded R-Group Fingerprints Provide Interpretable Nonlinear Models? <em>Journal of Chemical Information and Modeling</em>, 54<span class="arithmatex">\(4\)</span>:1117–1128, 2014. <a href="https://doi.org/10.1021/ci500075q">doi:10.1021/ci500075q</a>.&#160;<a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 47 in the text">&#8617;</a></p>
 </li>
 <li id="fn:48">
-<p>Thomas Ryckmans, Martin P. Edwards, Val A. Horne, Ana Monica Correia, Dafydd R. Owen, Lisa R. Thompson, Isabelle Tran, Michelle F. Tutt, and Tim Young. Rapid assessment of a novel series of selective CB2 agonists using parallel synthesis protocols: A Lipophilic Efficiency <span><span class="MathJax_Preview">LipE</span><script type="math/tex">LipE</script></span> analysis. <em>Bioorganic and Medicinal Chemistry Letters</em>, 2009. <a href="https://doi.org/10.1016/j.bmcl.2009.05.062">doi:10.1016/j.bmcl.2009.05.062</a>.&#160;<a class="footnote-backref" href="#fnref:48" title="Jump back to footnote 48 in the text">&#8617;</a></p>
+<p>Thomas Ryckmans, Martin P. Edwards, Val A. Horne, Ana Monica Correia, Dafydd R. Owen, Lisa R. Thompson, Isabelle Tran, Michelle F. Tutt, and Tim Young. Rapid assessment of a novel series of selective CB2 agonists using parallel synthesis protocols: A Lipophilic Efficiency <span class="arithmatex">\(LipE\)</span> analysis. <em>Bioorganic and Medicinal Chemistry Letters</em>, 2009. <a href="https://doi.org/10.1016/j.bmcl.2009.05.062">doi:10.1016/j.bmcl.2009.05.062</a>.&#160;<a class="footnote-backref" href="#fnref:48" title="Jump back to footnote 48 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1347,16 +1487,18 @@ a population of 900 sequences per iteration..</small></center></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.ca5457b8.min.js"></script>
       
-        <script src="js/extra.js"></script>
+        <script src="javascripts/extra.js"></script>
       
-        <script src="js/mathjax-config.js"></script>
+        <script src="javascripts/config.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>

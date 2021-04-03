@@ -1,5 +1,19 @@
 /* mathjax-loader.js  file */
 /* ref: http://facelessuser.github.io/pymdown-extensions/extensions/arithmatex/ */
+window.MathJax = {
+    tex: {
+      inlineMath: [["\\(", "\\)"]],
+      displayMath: [["\\[", "\\]"]],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      ignoreHtmlClass: ".*|",
+      processHtmlClass: "arithmatex"
+    }
+  };
+
+
 (function (win, doc) {
     win.MathJax = {
         config: ["MMLorHTML.js"],

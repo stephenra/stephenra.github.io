@@ -41,6 +41,19 @@ a:hover strong {
   line-height: 2.1rem
 }
 
+.md-header-topic {
+  padding: 0rem;
+  font-size: 1.2rem;
+  line-height: 2.1rem
+}
+
+.md-header__title {
+  padding: 0rem;
+  font-size: 1.1rem;
+  margin-left: 0rem;
+  line-height: 2.3rem;
+}
+
 .md-typeset h1,
 .md-typeset h2 {
   font-weight: 400;

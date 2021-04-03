@@ -48,7 +48,7 @@
       <link rel="manifest" href="../manifest.webmanifest" crossorigin="use-credentials">
     
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
     
       
@@ -203,9 +203,7 @@
   
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="https://www.stephenra.com" title="Stephen Ra" class="md-nav__button md-logo" aria-label="Stephen Ra">
       
@@ -503,6 +501,58 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oracles-and-oracle-properties" class="md-nav__link">
+    Oracles and oracle properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditioning-by-adaptive-sampling" class="md-nav__link">
+    Conditioning by adaptive sampling
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importance-sampling-based-estimation" class="md-nav__link">
+    Importance sampling-based estimation
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
@@ -535,21 +585,12 @@
 <h2 id="conditioning-by-adaptive-sampling">Conditioning by adaptive sampling</h2>
 <p>The problem setting is as follows: find settings of the discrete random vector <script type="math/tex">\boldsymbol{x} \in \mathbb{N}^{L}</script> (e.g. representative of DNA sequences) that have a high probability of satisfying some property desiderata (e.g. maximal fluoresence of a protein).</p>
 <p>The inference problem is expressed as:</p>
-<div>
-<div class="MathJax_Preview">p(\boldsymbol{x}|S, \theta^{(0)}) = \frac{P(S|\boldsymbol{x})p(\boldsymbol{x}|\theta^{(0)})}{P(S|\theta^{(0)})}</div>
-<script type="math/tex; mode=display">p(\boldsymbol{x}|S, \theta^{(0)}) = \frac{P(S|\boldsymbol{x})p(\boldsymbol{x}|\theta^{(0)})}{P(S|\theta^{(0)})}</script>
-</div>
+<div class="arithmatex">\[p(\boldsymbol{x}|S, \theta^{(0)}) = \frac{P(S|\boldsymbol{x})p(\boldsymbol{x}|\theta^{(0)})}{P(S|\theta^{(0)})}\]</div>
 <p>where <script type="math/tex">P(S|\theta^{(0)}) = \int_{s} P(S|\boldsymbol{x})p(\boldsymbol{x}|\theta^{(0)}) d\boldsymbol{x}</script>. </p>
 <p>Like <a href="https://arxiv.org/abs/1601.00670">variational inference</a>, the marginal probability of CbAS yields no analytic solution as the sum over all possible configurations of the latent structures and its parameters is intractable. Unsurprisingly, inference for CbAS is VI-like in that they minimize the KL divergence between the conditional and the approximating search model, <script type="math/tex">q(\boldsymbol{x}|\phi)</script>:</p>
-<div>
-<div class="MathJax_Preview">\phi^{*} = \underset{\phi}{\operatorname{argmin}} D_{KL} \big(p(\boldsymbol{x}|S,\theta^{(0)})||q(\boldsymbol{x}|\phi\big)</div>
-<script type="math/tex; mode=display">\phi^{*} = \underset{\phi}{\operatorname{argmin}} D_{KL} \big(p(\boldsymbol{x}|S,\theta^{(0)})||q(\boldsymbol{x}|\phi\big)</script>
-</div>
+<div class="arithmatex">\[\phi^{*} = \underset{\phi}{\operatorname{argmin}} D_{KL} \big(p(\boldsymbol{x}|S,\theta^{(0)})||q(\boldsymbol{x}|\phi\big)\]</div>
 <p>This can be re-written in terms of the log expectation of the difference between the search model distribution and the target conditional distribution, similar to how the <strong>Evidence Lower Bound (ELBO)</strong> can be derived:</p>
-<div>
-<div class="MathJax_Preview">\underset{\phi}{\operatorname{argmin}}\mathbb{E}_{p(\boldsymbol{x}|S,\theta^{(0)})}[\log p(\boldsymbol{x}|S,\theta^{(0)}) - \log q(\boldsymbol{x}|\phi)]</div>
-<script type="math/tex; mode=display">\underset{\phi}{\operatorname{argmin}}\mathbb{E}_{p(\boldsymbol{x}|S,\theta^{(0)})}[\log p(\boldsymbol{x}|S,\theta^{(0)}) - \log q(\boldsymbol{x}|\phi)]</script>
-</div>
+<div class="arithmatex">\[\underset{\phi}{\operatorname{argmin}}\mathbb{E}_{p(\boldsymbol{x}|S,\theta^{(0)})}[\log p(\boldsymbol{x}|S,\theta^{(0)}) - \log q(\boldsymbol{x}|\phi)]\]</div>
 <p>Thus, the second expectation can be expressed as the entropy of the target conditional distribution <script type="math/tex">H_{0} \equiv -\mathbb{E}_{p(\boldsymbol{x}|S,\theta^{(0)})}[\log p(\boldsymbol{x}|S,\theta^{(0)})]</script>:</p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -574,10 +615,7 @@
 </script>
 
 <p>where <script type="math/tex">p(\boldsymbol{x}|\theta^{(0)})</script> is our target density, <script type="math/tex">q(\boldsymbol{x}|\phi^{(t)})</script> is our proposed density and the ratio of the two:</p>
-<div>
-<div class="MathJax_Preview">\frac{p(\boldsymbol{x}|\theta^{(0)})}{q(\boldsymbol{x}|\phi^{(t)})}</div>
-<script type="math/tex; mode=display">\frac{p(\boldsymbol{x}|\theta^{(0)})}{q(\boldsymbol{x}|\phi^{(t)})}</script>
-</div>
+<div class="arithmatex">\[\frac{p(\boldsymbol{x}|\theta^{(0)})}{q(\boldsymbol{x}|\phi^{(t)})}\]</div>
 <p>is the eponymous <strong>importance weight</strong>. Now that we have this objective and given samples <script type="math/tex">\{x^{(i)} \}^{(n)}_{i}</script> from <script type="math/tex">q(\boldsymbol{x}|\phi^{(t)})</script>, we can construct MC estimates:</p>
 <script type="math/tex; mode=display">
 \begin{align}
@@ -712,16 +750,18 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.ca5457b8.min.js"></script>
       
-        <script src="../js/extra.js"></script>
+        <script src="../javascripts/extra.js"></script>
       
-        <script src="../js/mathjax-config.js"></script>
+        <script src="../javascripts/config.js"></script>
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
