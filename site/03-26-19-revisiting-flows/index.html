@@ -1,0 +1,897 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Personal website of Stephen Ra">
+      
+      
+        <link rel="canonical" href="https://www.stephenra.com/03-26-19-revisiting-flows/">
+      
+      
+        <meta name="author" content="Stephen Ra">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Revisiting normalizing flows - Stephen Ra</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Ubuntu+Mono">
+        <style>body,input{font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Ubuntu Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../manifest.webmanifest">
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="white">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#revisiting-normalizing-flows" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.stephenra.com" title="Stephen Ra" class="md-header-nav__button md-logo">
+          
+            <img src="../img/logo.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Stephen Ra
+            </span>
+            <span class="md-header-nav__topic">
+              Revisiting normalizing flows
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/stephenra/stephenra.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    stephenra/stephenra.github.io
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Latest" class="md-tabs__link">
+        Latest
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../05-07-19-adaptive-sampling/" title="Blog" class="md-tabs__link md-tabs__link--active">
+          Blog
+        </a>
+      
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../End-to-end learning for phenotypic discovery" title="Projects" class="md-tabs__link">
+          Projects
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../about/" title="About" class="md-tabs__link">
+          About
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.stephenra.com" title="Stephen Ra" class="md-nav__button md-logo">
+      
+        <img src="../img/logo.png" width="48" height="48">
+      
+    </a>
+    Stephen Ra
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/stephenra/stephenra.github.io/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    stephenra/stephenra.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Latest" class="md-nav__link">
+      Latest
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Blog
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Blog
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      2019
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        2019
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05-07-19-adaptive-sampling/" title="On conditioning by adaptive sampling" class="md-nav__link">
+      On conditioning by adaptive sampling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Revisiting normalizing flows
+      </label>
+    
+    <a href="./" title="Revisiting normalizing flows" class="md-nav__link md-nav__link--active">
+      Revisiting normalizing flows
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bijective-functions" title="Bijective functions" class="md-nav__link">
+    Bijective functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#affine-coupling-layers" title="Affine coupling layers" class="md-nav__link">
+    Affine coupling layers
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Projects
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Projects
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../End-to-end learning for phenotypic discovery" title="None" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../de-novo/" title="De novo molecule generation" class="md-nav__link">
+      De novo molecule generation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../transcriptomics.md" title="Probabilistic models for transcriptomics" class="md-nav__link">
+      Probabilistic models for transcriptomics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dels.md" title="DNA-encoded libraries (DELs)" class="md-nav__link">
+      DNA-encoded libraries (DELs)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ab.md" title="Optimizing antibody properties" class="md-nav__link">
+      Optimizing antibody properties
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../reaction.md" title="Predicting reaction outcomes" class="md-nav__link">
+      Predicting reaction outcomes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      About
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        About
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="Mission" class="md-nav__link">
+      Mission
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../team/" title="Team" class="md-nav__link">
+      Team
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../publications/" title="Publications" class="md-nav__link">
+      Publications
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../code.md" title="Code" class="md-nav__link">
+      Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../collaborators.md" title="Collaborators" class="md-nav__link">
+      Collaborators
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#bijective-functions" title="Bijective functions" class="md-nav__link">
+    Bijective functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#affine-coupling-layers" title="Affine coupling layers" class="md-nav__link">
+    Affine coupling layers
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stephenra/stephenra.github.io/edit/master/docs/03-26-19-revisiting-flows.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="revisiting-normalizing-flows">Revisiting normalizing flows</h1>
+<p><img alt="alt-text-1" src="../img/epoch_10_sample_4.png" title="title-1" /><img alt="alt-text-2" src="../img/epoch_600_sample_7.png" title="title-2" />
+<br>
+<strong>Fig 1:</strong> Samples from an unconditional model with affine coupling layers trained on the CIFAR-10 dataset with temperature 1.0 after 10 epochs (<strong>left</strong>) and 600 epochs (<strong>right</strong>) using <a href="https://github.com/horovod/horovod">Horovod</a> (You can find our Dockerfile <a href="https://github.com/PfizerRD/dl-gpu-utils/blob/master/dockerfiles/horovod_py3gpu/Dockerfile">here</a>).</p>
+<p><br>
+If you recall from our <a href="glow.md">previous discussion</a> on <strong>Glow</strong> (<a href="(https://arxiv.org/abs/1807.03039)">Kingma and Dhariwal 2018</a>), an attractive aspect of normalizing flows is that the exact log-likelihood of input data <script type="math/tex">\log p(\mathbf{x})</script> becomes tractable. As a result, the training criterion of a flow-based generative model is simply the negative log-likelihood (bits per dimension) over the training dataset <script type="math/tex">\mathcal{D}</script>:</p>
+<script type="math/tex; mode=display">\mathcal{L}(\mathcal{D})
+= - \frac{1}{\vert\mathcal{D}\vert}\sum_{\mathbf{x} \in \mathcal{D}} \log
+p(\mathbf{x})</script>
+
+<p>What distinguishes flow-based generative models' capacity for exact inference
+versus other types of generative models? Simply, it's that flow-based models
+combine several fundamental concepts as a substrate for transforming
+distributions in a way that optimization of the log-likelihood is tractable.
+I'll review the motivation and implementation of a normalizing flow through
+the use of <strong>bijective functions</strong>.</p>
+<h2 id="bijective-functions">Bijective functions</h2>
+<p>In deep learning, rich high-dimensional densities typically use invertible
+volume-preserving mappings or mappings with fast volume adjustments -- i.e.
+the logarithm of the determinant of the Jacobian has linear complexity with respect
+to dimensionality. For a given probability distribution <script
+type="math/tex">p_{Y}(\mathbf{y})</script>, the density is:</p>
+<div>
+<div class="MathJax_Preview">p_{Y}(\mathbf{y}) = p_{X}(G^{-1}(\mathbf{y}))\ \mathrm{det}
+( \frac{\partial}{\partial\mathbf{y}} G^{-1}(\mathbf{y} ))</div>
+<script type="math/tex; mode=display">p_{Y}(\mathbf{y}) = p_{X}(G^{-1}(\mathbf{y}))\ \mathrm{det}
+( \frac{\partial}{\partial\mathbf{y}} G^{-1}(\mathbf{y} ))</script>
+</div>
+<p>where <script type="math/tex">G^{-1}</script> is an inverse transformation and <script
+type="math/tex">\mathrm{det}(\frac{\partial}{\partial\mathbf{y}}
+G^{-1}(\mathbf{y}))</script> is the determinant of the Jacobian.</p>
+<p>We can then compute the log determinant of the Jacobian of the inverse
+transformation; we can also easily verify the "volume-preserving" property of
+the transformation:</p>
+<script type="math/tex; mode=display">
+\begin{align}
+  \mathrm{det} \left ( \frac{\partial}{\partial\mathbf{y}} G^{-1}(\mathbf{y}) \right )
+  & = \mathrm{det}
+  \begin{pmatrix}
+    \frac{\partial}{\partial y_1} y_1             & \frac{\partial}{\partial y_2} y_1 \newline
+    \frac{\partial}{\partial y_1} y_2 + y_1^2 + 1 & \frac{\partial}{\partial y_2} y_2 + y_1^2 + 1 \newline
+  \end{pmatrix} \newline
+  & = \mathrm{det}
+  \begin{pmatrix}
+    1     & 0 \newline
+    2 y_1 & 1 \newline
+  \end{pmatrix}
+  = 1
+  \end{align}
+</script>
+
+<p>Fortunately for us, libraries like <a href="https://www.tensorflow.org/probability">TensorFlow
+Probablility</a> have already done some of
+the heavy lifting by providing an extensive selection of different probability
+distribution and bijector classes. Both the <code>Distribution</code> and <code>Bijector</code>
+classes are used to comprise a <code>TransformedDistribution</code>, which models <code>p(y)</code>
+given a base distribution (an instance of the <code>Distribution</code> class)
+and an invertible, differentiable transform <code>Y = g(X)</code> (an instance of
+the <code>Bijector</code> class), where <code>g</code> is a deterministic
+<a href="https://en.wikipedia.org/wiki/Diffeomorphism">diffeomorphism</a>. The <a href="https://www.tensorflow.org/probability/api_docs/python/tfp/bijectors/Bijector#class_bijector">TFP
+API</a> declares three operations that characterize a <code>Bijector</code>:</p>
+<blockquote>
+<p>Forward</p>
+<p>Useful for turning one random outcome into another random outcome from a different distribution.</p>
+<p>Inverse</p>
+<p>Useful for "reversing" a transformation to compute one probability in terms of another.</p>
+<p><code>log_det_jacobian(x)</code></p>
+<p>"The log of the absolute value of the determinant of the matrix of all first-order partial derivatives of the inverse function."</p>
+</blockquote>
+<p>Thus, creating our bijector by subclassing `Bijector``:</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">tensorflow_probability</span> <span class="kn">as</span> <span class="nn">tfp</span>
+
+
+<span class="c1"># forward transformation as instance method</span>
+<span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="n">tfp</span><span class="o">.</span><span class="n">bijectors</span><span class="o">.</span><span class="n">Bijector</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Foo&quot;</span><span class="p">):</span>
+
+  <span class="nb">super</span><span class="p">(</span><span class="n">Foo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">inverse_min_event_ndims</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                            <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
+
+
+  <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+
+  <span class="n">y_0</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+  <span class="n">y_1</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="n">y_0</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="n">y_tail</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+  <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">y_0</span><span class="p">,</span> <span class="n">y_1</span><span class="p">,</span> <span class="n">y_tail</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+<p>Next, let's look at a simple example illustrating standard <code>TransformedDistribution</code> ops by constructing a Log-Normal distribution from a Normal distribution:</p>
+<div class="codehilite"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">contrib</span><span class="o">.</span><span class="n">distributions</span>
+<span class="n">log_normal</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">TransformedDistribution</span><span class="p">(</span>
+  <span class="n">distribution</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">Normal</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">1.</span><span class="p">),</span>
+  <span class="n">bijector</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">bijectors</span><span class="o">.</span><span class="n">Exp</span><span class="p">(),</span>
+  <span class="n">name</span><span class="o">=</span><span class="s2">&quot;LogNormalTransformedDistribution&quot;</span><span class="p">)</span>
+</pre></div>
+
+<p>We've instantiated a <code>TranformedDistribution</code> with an <code>Exp</code> bijector and
+<code>Normal</code> distribution with parameters <code>loc = 0</code> and <code>scale = 1</code>
+(<script type="math/tex">\mu</script> and <script type="math/tex">\Sigma</script>,
+respectively). It's worth noting that in TFP, we can start to initialize batches
+of scalar-valued Normals (and other distributions) by broadcasting.</p>
+<h2 id="affine-coupling-layers">Affine coupling layers</h2>
+<p>As I mentioned, in the <strong>RealNVP</strong> (Real-valued Non-Volume Preserving; <a href="https://arxiv.org/abs/1605.08803">Dinh et al. 2017</a>) paper normalizing flows are implemented by stacking a sequence of invertible bijective transformation functions. In each bijection <script type="math/tex">f: \mathbf{x} \mapsto \mathbf{y}</script>, known as the <em>affine coupling layer</em> (ACL), the input dimensions are split into two parts:</p>
+<ul>
+  <li>The first <script type="math/tex">d</script> dimensions remain the same.</li>
+  <li>The second part, <script type="math/tex">d+1</script> to <script type="math/tex">D</script> dimensions, undergo an affine transformation (“scale-and-shift”) and both the scale and shift parameters are functions of the first <script type="math/tex">d</script> dimensions.</li>
+</ul></p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+\mathbf{y}_{1:d} &= \mathbf{x}_{1:d} \\ 
+\mathbf{y}_{d+1:D} &= \mathbf{x}_{d+1:D} \odot \exp({s(\mathbf{x}_{1:d})}) + t(\mathbf{x}_{1:d})
+\end{aligned} %]]></script>
+
+<p>where <script type="math/tex">s(.)</script> and <script type="math/tex">t(.)</script> are <em>scale</em> and <em>translation</em> functions and both map <script type="math/tex">\mathbb{R}^d \mapsto \mathbb{R}^{D-d}</script>. How would we go about coding this?</p>
+<p>Let's decompose this in pseudo-code. The first component of the input dimension is straightforward since it's simply:</p>
+<div class="codehilite"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">d</span><span class="p">]</span>
+</pre></div>
+
+<p>However, the second component requires that we scale-and-shift the last <code>D-d</code> units contingent on the first <code>d</code> units only, while the first <code>d</code> units are masked and left unchanged. In TensorFlow, this would look like:</p>
+<p><div class="codehilite"><pre><span></span><span class="n">y</span><span class="p">[</span><span class="n">d</span><span class="p">:</span><span class="n">D</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">d</span><span class="p">:</span><span class="n">D</span><span class="p">]</span> <span class="o">*</span> <span class="n">tf</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_scale_fn</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">d</span><span class="p">]))</span> <span class="o">+</span> <span class="n">shift_fn</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">d</span><span class="p">])</span>
+</pre></div>
+<br>
+</br></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../05-07-19-adaptive-sampling/" title="On conditioning by adaptive sampling" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                On conditioning by adaptive sampling
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../de-novo/" title="De novo molecule generation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                De novo molecule generation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Stephen Ra
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/stephenra" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/stephenrra" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="../js/mathjax-config.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

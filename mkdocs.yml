@@ -1,0 +1,102 @@
+# Project information
+site_name: 'Stephen Ra'
+site_description: 'Personal website of Stephen Ra'
+site_author: 'Stephen Ra'
+site_url: 'https://www.stephenra.com'
+
+# Copyright
+copyright: 'Copyright &copy; 2022 Stephen Ra'
+
+# Theme
+docs_dir: docs
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'white'
+    accent: 'white'
+  font:
+    text: 'Lato'
+    code: 'Ubuntu Mono'
+  favicon: 'img/favicon.png'
+  features:
+    - navigation.tabs
+  logo: 'img/logo.png'
+
+# Site
+nav:
+- Latest: 
+  - 'Black box recursive translations for molecular optimization': index.md
+- Blog:
+  - 2020:
+    - 'Black box recursive translations for molecular optimization': 01-06-20-bbrt.md
+  - 2019:
+    - 'On conditioning by adaptive sampling': 05-07-19-adaptive-sampling.md
+- About: 
+    - 'Bio': about.md
+    - 'CV': cv.md
+    - 'Publications': publications.md
+
+# Build directories
+
+site_dir: '/Users/ras3/Code/stephenra.github.io/'
+
+
+# Extras
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - icon: 'fontawesome/regular/envelope-open'
+      link: 'mailto:contact@stephenra.com'
+    - icon: 'fontawesome/brands/github'
+      link: 'https://github.com/stephenra'
+    - icon: 'fontawesome/brands/twitter'
+      link: 'https://twitter.com/stephenrra'
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/extra.js
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - mdx_math
+  - meta
+  - toc:
+      permalink: false
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde   # Hide table of contents
+
+#Plugins
+plugins:
+  - bibtex:
+      bib_file: "docs/bib/refs.bib"
+      cite_style: "pandoc"
