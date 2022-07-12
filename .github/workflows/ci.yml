@@ -1,8 +1,8 @@
-name: ci
+name: ci 
 on:
   push:
     branches:
-      - master
+      - master 
       - main
 jobs:
   deploy:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
-      with:
-        python-version: 3.x
+        with:
+          python-version: 3.x
       - run: pip install mkdocs-material python-markdown-math mkdocs-bibtex
-      - run: mkdocs build
+      - run: mkdocs gh-deploy --force
