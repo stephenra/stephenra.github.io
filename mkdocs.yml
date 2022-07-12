@@ -38,9 +38,7 @@ nav:
     - 'Publications': publications.md
 
 # Build directories
-
-site_dir: '/Users/ras3/Code/stephenra.github.io/'
-
+# site_dir: 
 
 # Extras
 extra:
