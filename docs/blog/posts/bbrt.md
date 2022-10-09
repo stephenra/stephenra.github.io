@@ -1,3 +1,15 @@
+---
+title: Black box recursive translation
+date: 2020-01-06
+authors:
+    - stephen
+tags:
+    - molecules
+    - chemistry
+    - optimization
+    - nmt
+---
+
 # Black box recursive translations for molecular optimization
 
 In this entry, I wanted to highlight work done by [Farhan Damani](http://fdamani.com/), [Vishnu Sresht](https://dbgroup.mit.edu/vishnu-sresht-0), and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on [arXiv](https://arxiv.org/pdf/1912.10156.pdf) and was [accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules](https://ml4molecules.github.io/papers2020/accepted.html).
