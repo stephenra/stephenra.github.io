@@ -21,7 +21,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.stephenra.com/blog/category/neural-machine-translation/</loc>
+         <loc>https://www.stephenra.com/blog/category/molecules/</loc>
+         <lastmod>2022-10-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.stephenra.com/blog/category/chemistry/</loc>
          <lastmod>2022-10-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -31,12 +36,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.stephenra.com/blog/category/molecules/</loc>
-         <lastmod>2022-10-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.stephenra.com/blog/category/chemistry/</loc>
+         <loc>https://www.stephenra.com/blog/category/neural-machine-translation/</loc>
          <lastmod>2022-10-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
