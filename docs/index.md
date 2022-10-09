@@ -26,11 +26,15 @@ img {
     }
 </style>
 
-<img src="../img/profile.png" alt="profile" style="width:190px;height:196px; margin-top:10px; margin-right:15px;" />
+<img src="../img/profile.png" alt="profile" style="width:190px;height:196px; margin-top:12px; margin-right:15px;" />
 
 
-<div style="text-align:left; vertical-align: left; padding:0px 150px;">
-I am the Director of Frontier Research at <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>, where my team works on machine learning for scientific discovery. Previously, I was Head of Machine Learning at Pfizer R&D from 2017 to 2021, where I led a research group focused on <a href="https://insights.pfizer.com/pfizer-is-using-ai-to-discover-breakthrough-medicines">developing methods for various problems in drug discovery and design</a> including better adaptation and controllable generation in generative models and active learning. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.
+<div style="text-align:left; vertical-align: left; padding:0px 220px;">
+<p>
+I am the Director of Frontier Research at <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>, where I co-lead a team working on machine learning for scientific discovery. 
+</p>
+<p>
+Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led a research group focused on <a href="https://insights.pfizer.com/pfizer-is-using-ai-to-discover-breakthrough-medicines">developing methods for problems in drug discovery</a> including better adaptation for generative models and active learning. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.
 </p>
 </div>
 <br>

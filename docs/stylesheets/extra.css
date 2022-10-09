@@ -63,6 +63,11 @@ a:hover strong {
   letter-spacing: -.01em;
 }
 
+.md-typeset {
+  font-size: .7rem;
+  line-height: 1.6;
+}
+
 .md-typeset h1 {
   margin: 0 0 2rem;
   color: rgba(42, 42, 42, 0.88);
