@@ -1,8 +1,3 @@
----
-hide:
-  - footer
----
-
 ##  Bio
 <style>
 img {
@@ -30,13 +25,15 @@ img {
 I am the Director of Frontier Research at <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>, where I was a member of the founding team and currently work on machine learning for scientific discovery. Previously, I was Head of Machine Learning at Pfizer R&D from 2017 to 2021, where I led a research group focused on <a href="https://insights.pfizer.com/pfizer-is-using-ai-to-discover-breakthrough-medicines">developing methods for various problems in drug discovery and design</a> including better adaptation and controllable generation in generative models and active learning. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.
 </p>
 
+<br>
+
 ## Select Publications
 
 [**EquiFold: Protein structure prediction with a novel coarse-grained representation**](https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1)
 <br>
 Jae Hyeon Lee, Payman Yadollahpour, Andrew Watkins, Nathan C. Frey, Andrew Leaver-Fay, <b>Stephen Ra</b>, Kyunghyun Cho, Vladimir Gligorijević, Richard Bonneau, Aviv Regev, Richard Bonneau
 <br>
-*bioRxiv*, 2022
+*bioRxiv*, 2022  
 <a href="https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1">Paper</a>
 
 

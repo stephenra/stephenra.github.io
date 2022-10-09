@@ -28,7 +28,7 @@ theme:
 
 # Site
 nav:
-- About: 'index.md'
+- About: 'about.md'
 - Blog:
   - 2020:
     - 'Black box recursive translations for molecular optimization': 01-06-20-bbrt.md
