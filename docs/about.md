@@ -1,8 +1,3 @@
----
-hide:
-  - footer
----
-
 <style>
 img {
   /* border-radius: 50%; */
