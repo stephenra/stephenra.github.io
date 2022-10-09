@@ -28,15 +28,13 @@ theme:
 
 # Site
 nav:
-- Latest: 
-  - 'Black box recursive translations for molecular optimization': index.md
+- About: 'index.md'
 - Blog:
   - 2020:
     - 'Black box recursive translations for molecular optimization': 01-06-20-bbrt.md
   - 2019:
     - 'On conditioning by adaptive sampling': 05-07-19-adaptive-sampling.md
-- About: 
-  - 'About': about.md
+
 
 # Build directories
 # site_dir: 
