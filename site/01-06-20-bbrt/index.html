@@ -133,7 +133,7 @@
 
   <li class="md-tabs__item">
     <a href="../about/" class="md-tabs__link">
-      About
+      Home
     </a>
   </li>
 
@@ -205,7 +205,7 @@
   
     <li class="md-nav__item">
       <a href="../about/" class="md-nav__link">
-        About
+        Home
       </a>
     </li>
   
@@ -249,7 +249,9 @@
   
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
@@ -447,53 +449,6 @@
 
             
           
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          2019
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="2019" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          2019
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../05-07-19-adaptive-sampling/" class="md-nav__link">
-        On conditioning by adaptive sampling
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
         </ul>
       </nav>
     </li>
@@ -513,8 +468,8 @@
               
                 
 
-<h1 id="black-box-recursive-translations-for-molecular-optimization">Black Box Recursive Translations for Molecular Optimization</h1>
-<p>In this entry, I wanted to highlight work done by ML research intern, <a href="http://fdamani.com/">Farhan Damani</a> (previously a Ph.D. student with Ryan Adams), a Pfizer colleague <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a> and was <a href="https://ml4molecules.github.io/papers2020/accepted.html">accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules</a>.</p>
+<h1 id="black-box-recursive-translations-for-molecular-optimization">Black box recursive translations for molecular optimization</h1>
+<p>In this entry, I wanted to highlight work done by <a href="http://fdamani.com/">Farhan Damani</a>, <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a> and was <a href="https://ml4molecules.github.io/papers2020/accepted.html">accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules</a>.</p>
 <p>The goal here is to map an input compound to a target compound in property space with the expectation that "translated" molecules have some improved biochemical property <em>desiderata</em>. Interestingly, we observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step akin to self-distillation dynamics. We demonstrate that this finding is largely invariant to the choice of translation model, making this a "black box" algorithm and accordingly call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. By operating strictly on the inputs and outputs of any translation model, we demonstrate results competitive with the latest, state-of-the-art benchmarks for molecular property optimization tasks. Furthermore, using our simple drop-in replacement with well-known sequence and graph-based models, we show a significant boost in performance relative to non-recursive baselines. Lastly, BBRT facilitates interpretation, allowing users to map the evolution of newly discovered compounds from known starting points.</p>
 <p><img src='../img/bbrt.gif' alt='workflow' width="800"/></p>
 <hr />
@@ -1184,7 +1139,7 @@ a population of 900 sequences per iteration..</small></center></p>
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: About" rel="prev">
+        <a href="../about/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1193,26 +1148,11 @@ a population of 900 sequences per iteration..</small></center></p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              About
+              Home
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../05-07-19-adaptive-sampling/" class="md-footer__link md-footer__link--next" aria-label="Next: On conditioning by adaptive sampling" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              On conditioning by adaptive sampling
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -1286,12 +1226,10 @@ a population of 900 sequences per iteration..</small></center></p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.ca141e46.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tracking", "navigation.instant", "navigation.sections", "navigation.expand", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.ca141e46.min.js"}</script>
     
     
       <script src="../assets/javascripts/bundle.6baa0517.min.js"></script>
-      
-        <script src="../javascripts/extra.js"></script>
       
         <script src="../javascripts/mathjax.js"></script>
       

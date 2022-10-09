@@ -23,17 +23,17 @@ theme:
     - navigation.tabs
     - navigation.tracking
     - navigation.instant
+    - navigation.sections
+    - navigation.expand
     - toc.integrate
   logo: 'img/logo.png'
 
 # Site
 nav:
-- About: 'about.md'
+- About: 'index.md'
 - Blog:
   - 2020:
     - 'Black box recursive translations for molecular optimization': 01-06-20-bbrt.md
-  - 2019:
-    - 'On conditioning by adaptive sampling': 05-07-19-adaptive-sampling.md
 
 
 # Build directories
@@ -58,10 +58,6 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/extra.js
-
-extra_javascript:
-  - javascripts/extra.js
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
