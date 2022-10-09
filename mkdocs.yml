@@ -21,6 +21,9 @@ theme:
   favicon: 'img/favicon.png'
   features:
     - navigation.tabs
+    - navigation.tracking
+    - navigation.instant
+    - navigation.indexes 
   logo: 'img/logo.png'
 
 # Site
@@ -33,9 +36,7 @@ nav:
   - 2019:
     - 'On conditioning by adaptive sampling': 05-07-19-adaptive-sampling.md
 - About: 
-    - 'Bio': about.md
-    - 'CV': cv.md
-    - 'Publications': publications.md
+  - 'About': about.md
 
 # Build directories
 # site_dir: 
@@ -50,6 +51,8 @@ extra:
       link: 'https://github.com/stephenra'
     - icon: 'fontawesome/brands/twitter'
       link: 'https://twitter.com/stephenrra'
+    - icon: 'fontawesome/brands/linkedin'
+      link: 'https://www.linkedin.com/in/stephenra/'
 
 extra_css:
   - stylesheets/extra.css

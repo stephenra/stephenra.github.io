@@ -69,6 +69,12 @@ $$
 The conditional probability is typically factorized according to the Chain Rule:
 
 $$
+---
+hide:
+  - footer
+---
+
+
 P(y|x; \theta) = \prod_{t=1}^n P(y_t | y_{<t}, x, \theta)
 $$
 
