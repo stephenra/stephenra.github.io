@@ -43,6 +43,7 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 
 ## Publications
 
+<br>
 
 <img src="../img/equifold.gif" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>EquiFold: Protein structure prediction with a novel coarse-grained representation</ins>**](https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1)
