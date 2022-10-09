@@ -1,13 +1,13 @@
 /* .md-footer-meta{
   display:none !important;
 } */
-.md-header-nav__source {
+/* .md-header-nav__source {
   display: none !important;
-}
+} */
 
 /* Type */
 
-a {
+/* a {
   -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -98,7 +98,7 @@ i {
 .md-nav__link:focus,
 .md-nav__link:hover {
   color: #ea1c3b
-}
+} */
 
 /* .md-nav__source,
 .no-js */

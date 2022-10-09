@@ -720,7 +720,7 @@
                     </span>
                     <span class="md-profile__description">
                       <strong>Stephen Ra</strong><br>
-                      Creator
+                      Author
                     </span>
                   </div>
                 
@@ -781,7 +781,7 @@
 <h1 id="black-box-recursive-translations-for-molecular-optimization">Black box recursive translations for molecular optimization</h1>
 <p>In this entry, I wanted to highlight work done by <a href="http://fdamani.com/">Farhan Damani</a>, <a href="https://dbgroup.mit.edu/vishnu-sresht-0">Vishnu Sresht</a>, and myself, where we cast molecular optimization as a neural translation problem. Our preprint is available on <a href="https://arxiv.org/pdf/1912.10156.pdf">arXiv</a> and was <a href="https://ml4molecules.github.io/papers2020/accepted.html">accepted at the 2020 NeurIPS Workshop on Machine Learning for Molecules</a>.</p>
 <p>The goal here is to map an input compound to a target compound in property space with the expectation that "translated" molecules have some improved biochemical property <em>desiderata</em>. Interestingly, we observe that when generated molecules are iteratively fed back into the translator, molecular compound attributes improve with each step akin to self-distillation dynamics. We demonstrate that this finding is largely invariant to the choice of translation model, making this a "black box" algorithm and accordingly call this method <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization. </p>
-<p><img src='~/img/bbrt.gif' alt='workflow' width="800"/></p>
+<p><img src='../../../../../img/bbrt.gif' alt='workflow' width="800"/></p>
 <!-- more -->
 <hr />
 <h2 id="introduction">Introduction</h2>
@@ -791,7 +791,7 @@ to be structurally similar to the source molecule.</p>
 <p>We extend this framework to unconstrained molecular optimization by treating inference, vis-à-vis decoding strategies, as a first-class citizen. We observe that generated molecules can be repeatedly fed back into the model to generate even better compounds. This finding is
 invariant to the choice of translation model, making this a “black box” algorithm. This invariance is particularly attractive considering the recent emphasis on new molecular representations<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup> <sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> <sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> <sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup> <sup id="fnref:8"><a class="footnote-ref" href="#fn:8">8</a></sup> <sup id="fnref:9"><a class="footnote-ref" href="#fn:9">9</a></sup>. Using our simple drop-in replacement, our method can leverage these recently introduced molecular representations in a translation setting for better optimization.</p>
 <p>We introduce <strong>Black Box Recursive Translation (BBRT)</strong>, a new inference method for molecular property optimization:</p>
-<p><img src="../img/bbrt-diagram.png" alt="bbrt-diagram" width="700"/></p>
+<p><img src="../../../../../img/bbrt-diagram.png" alt="bbrt-diagram" width="700"/></p>
 <p><center><small><b>Figure 1:</b> Black Box Recursive Translation (BBRT)</small></center></p>
 <p><strong>Surprisingly, by applying BBRT to well-known sequence- and graph-based models in the literature, we can produce new state-of-the-art results on property optimization
 benchmark tasks.</strong> Through an exhaustive exploration of various decoding strategies, we demonstrate the empirical benefits of using BBRT. We introduce simple ranking methods to decide which outputs are fed back into the model and find ranking to be an appealing approach to secondary property optimization. Finally, we demonstrate how BBRT is an
@@ -982,7 +982,7 @@ the training data. Maximally diverse compounds were computed using the
 MaxMin algorithm <sup id="fnref:41"><a class="footnote-ref" href="#fn:41">41</a></sup> on Morgan fingerprints. We found seeding
 our translations with diverse compounds helped BBRT generate higher
 scoring compounds:</p>
-<p><img src="../img/seed_choice.png" alt="bbrt-seed-choice" width="800"/></p>
+<p><img src="../../../../../img/seed_choice.png" alt="bbrt-seed-choice" width="800"/></p>
 <p><center><small><b>Figure 2:</b> <strong>(A)</strong>: Applying BBRT-Seq2Seq to three seed sequence sets with 100 samples each. The MaxMin algorithm was used to select samples with varying levels of diversity (max: 0.94, avg: 0.96, and min: 0.78). For each input sequence, we sampled 100 times from a top-5 sampler and ranked samples using logP. Standard error is reported by averaging over 10 BBRT-Seq2Seq runs with different seed sets. <strong>(B)</strong>: Applying BBRT-Seq2Seq to three seed sequence sets with 100 samples each and varying logP values (low: logP values &lt; 1, medium: [-1 1], high: values &gt; 1). Standard error is reported by averaging over 10 runs each with a randomly chosen set of seed sequences.</small></center></p>
 <p>For both BBRT applications, we sampled 100 complete sequences from a top-<span class="arithmatex">\(2\)</span> and from a top-<span class="arithmatex">\(5\)</span> sampler and then aggregated these outputs with a beam search using 20 beams outputting 20 sequences.</p>
 <p><strong>Baselines.</strong> We compare our method with the following state-of-the-art
@@ -1126,11 +1126,11 @@ both BBRT models and the top 100 logP compounds in the training data.
 The JTNN variant produces logP compounds that are more diverse than the
 compounds in the training data, while the compounds generated by Seq2Seq
 are less diverse:</p>
-<p><img src="../img/top100logp.png" alt="bbrt-top100logp" width="700"/></p>
+<p><img src="../../../../../img/top100logp.png" alt="bbrt-top100logp" width="700"/></p>
 <p><center><small><b>Figure 3:</b> <strong>(Left and Center)</strong>: Top 100 logP generated compounds under BBRT-Seq2Seq, BBRT-JTNN, and their non-recursive counterparts. <strong>(Right)</strong>: Diversity of top 100 generated compounds under both BBRT models and the top 100 compounds from the training data.</small></center></p>
 <p><strong>Figure 4</strong> visualizes the top 2 discovered compounds by
 BBRT-JTNN and BBRT-Seq2Seq under both properties:</p>
-<p><img src="../img/recursive_top2_comparison.png" alt="bbrt-top2-comparison" width="700"/></p>
+<p><img src="../../../../../img/recursive_top2_comparison.png" alt="bbrt-top2-comparison" width="700"/></p>
 <p><center><small><b>Figure 4:</b> Top scoring compounds for properties logP and QED under BBRT-Seq2Seq
 and BBRT-JTNN</small></center></p>
 <p>For logP, while BBRT-JTNN produces compounds with higher property values, BBRT-Seq2Seq’s
@@ -1156,7 +1156,7 @@ effect of various BBRT design choices on performance. We highlight the
 variability in average logP from translated outputs at each iteration
 with different decoding strategies (<strong>Figure 5A. Left.</strong>)
 and scoring functions (<strong>Figure 5A. Right.</strong>):</p>
-<p><img src="../img/rec_inf_limit.png" alt="bbrt-rec_inf_limit" width="700"/>
+<p><img src="~/img/rec_inf_limit.png" alt="bbrt-rec_inf_limit" width="700"/>
 <center><small><b>Figure 5:</b> Ablation experiments using BBRT-Seq2Seq. <strong>(A. Left):</strong> Mean LogP from 900 translations as a function of recursive iteration for three decoding strategies. Dotted lines denote non-recursive counterparts. <strong>(A. Right):</strong> Mean logP as a function of recursive iteration for 4 scoring functions. <strong>(B. Left):</strong> Diversity of generated outputs across recursive iterations for logP translation. <strong>(B. Right):</strong> Diversity of generated outputs across recursive iterations for QED translation. </small></center></p>
 <p><strong>On the importance of stochastic decoding.</strong> For non-recursive and
 recursive translation models, <strong>stochastic decoding methods outperformed
@@ -1192,7 +1192,7 @@ that interpretable paths of optimization facilitate user adoption.</p>
 <p><strong>Molecular traces.</strong> BBRT generates a sequence of iterative, local
 edits from an initial compound to an optimized one. We call these
 optimization paths a <strong>molecular trace</strong>:</p>
-<p><img src="../img/mol_rec.png" alt="bbrt-mol-rec" width="750"/>
+<p><img src="../../../../../img/mol_rec.png" alt="bbrt-mol-rec" width="750"/>
 <center><small><b>Figure 6:</b> <strong>(A)</strong>: Generated molecular trace by ranking intermediate outputs by the maximum pairwise Tanimoto similarity. <strong>(B)</strong>: An example of a molecular breakpoint. Alternative translations are considered from compound (2) each with its own design trade-offs.</small></center></p>
 <p>We use the Min Delta Sim scoring function to generate traces that have the
 minimum possible structural changes, while still improving logP. While
@@ -1216,7 +1216,7 @@ propagated to the next recursive step. We apply BBRT to Seq2Seq modeling
 (BBRT-Seq2Seq) and use the trained QED translator described in <a href="#molecule-generation-results">Section 5.1</a>. The inference task is to optimize QED and logP as the primary and secondary
 properties respectively. We compare scoring outputs based on QED and
 logP:</p>
-<p><img src="../img/multiprop.png" alt="bbrt-multiprop" width="700"/>
+<p><img src="../../../../../img/multiprop.png" alt="bbrt-multiprop" width="700"/>
 <center><small><b>Figure 7:</b> Applying BBRT to multi-property optimization. QED is the primary target and logP is the secondary property. <strong>(A)</strong>: Average logP as a function of recursive iteration for three decoding strategies with primary and secondary property scoring functions. <strong>(B)</strong>: Average QED as a function of recursive iteration for three decoding strategies with primary and secondary property scoring functions.</small></center></p>
 <p>In <strong>Figure 7A</strong>, we compute the average logP per
 recursive iteration for a set of translated compounds across three
@@ -1234,7 +1234,7 @@ the generated compounds under a logP scoring function converge to lower
 values relative to QED values for compounds scored by QED for all three
 decoding strategies. We repeat this experiment with JTNN and show
 similar effects:</p>
-<p><img src="../img/multiprop_g2g.png" alt="bbrt-multiprop-g2g" width="700"/>
+<p><img src="../../../../../img/multiprop_g2g.png" alt="bbrt-multiprop-g2g" width="700"/>
 <center><small><b>Figure 8:</b> Applying BBRT-JTNN to secondary property optimization. QED is the primary target and logP is the secondary property. <strong>(Left)</strong>: Average logP as a function of recursive iteration under two scoring functions---QED and logP. <strong>(Right)</strong>: Average QED as a function of recursive iteration for same two scoring functions.</small></center></p>
 <p>Secondary property optimization by ranking extends to variables that are
 at minimum loosely positively correlated. For QED optimization, the
@@ -1270,12 +1270,12 @@ implementation from You et al. (2018)<sup id="fnref3:38"><a class="footnote-ref"
 compute clogP and synthetic accessibility scores. QED scores are also
 computed using RDKit.</p>
 <h3 id="b-supplemental-experiments">B. Supplemental Experiments</h3>
-<p><img src="../img/ranking_comparison_rg2g.png" alt="bbrt-rank-comparison-rg2g" width="700"/></p>
+<p><img src="../../../../../img/ranking_comparison_rg2g.png" alt="bbrt-rank-comparison-rg2g" width="700"/></p>
 <p><center><small><b>Figure 9:</b> Comparison of scoring functions for BBRT-JTNN. Y-axis is mean logP
 from 900 translations as a function of recursive iteration. Dotted lines denote non-recursive counterparts. "Rec. Inf." is synonymous with BBRT-JTNN.</small></center></p>
-<p><img src="../img/toplogp_trace.png" alt="bbrt-top-logp-trace" width="700"/></p>
+<p><img src="../../../../../img/toplogp_trace.png" alt="bbrt-top-logp-trace" width="700"/></p>
 <p><center><small><b>Figure 10:</b> A molecular trace from optimizing logP using a logP scoring function.</small></center></p>
-<p><img src="../img/edit_distance.png" alt="bbrt-edit-distance" width="700"/></p>
+<p><img src="../../../../../img/edit_distance.png" alt="bbrt-edit-distance" width="700"/></p>
 <p><center><small><b>Figure 11:</b> Comparing pairwise Levenshtein edit distances for generated sequences
 after running BBRT under two different scoring functions (logP and
 maximum pairwise Tanimoto similarity) and two different decoding

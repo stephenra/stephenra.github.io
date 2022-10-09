@@ -47,11 +47,14 @@ a:hover strong {
   line-height: 2.1rem
 }
 
-.md-header__title {
-  padding: 0rem;
+.md-header__topic:first-child {
+  font-weight: 500;
+}
+
+[dir=ltr] .md-header__title {
   font-size: 1.1rem;
-  margin-left: 0rem;
   line-height: 2.3rem;
+  margin-left: 0rem;
 }
 
 .md-typeset h1,
