@@ -6,7 +6,12 @@ tags:
     - molecules
     - chemistry
     - optimization
-    - nmt
+    - neural machine translation
+categories:
+  - molecules
+  - optimization
+  - chemistry
+  - neural machine translation
 ---
 
 # Black box recursive translations for molecular optimization
