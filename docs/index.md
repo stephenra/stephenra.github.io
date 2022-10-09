@@ -26,13 +26,13 @@ img {
     }
 </style>
 
-<img src="../img/profile.jpg" alt="profile" style="width:210px;height:200px; margin-top:10px; margin-right:15px;" />
+<img src="../img/profile.png" alt="profile" style="width:190px;height:196px; margin-top:10px; margin-right:15px;" />
 
-<p style="text-align:left" padding:0px>
-I am the Director of Frontier Research at <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>. At Prescient, I was a member of the founding team and have helped build and lead a team of scientists working on machine learning for scientific discovery. Previously, I was Head of Machine Learning at Pfizer R&D from 2017 to 2021, where I led a research group focused on <a href="https://insights.pfizer.com/pfizer-is-using-ai-to-discover-breakthrough-medicines">developing methods for various problems in drug discovery and design</a> including better adaptation and controllable generation in generative models and active learning. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.
+
+<div style="text-align:left; vertical-align: left; padding:0px 150px;">
+I am the Director of Frontier Research at <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>, where my team works on machine learning for scientific discovery. Previously, I was Head of Machine Learning at Pfizer R&D from 2017 to 2021, where I led a research group focused on <a href="https://insights.pfizer.com/pfizer-is-using-ai-to-discover-breakthrough-medicines">developing methods for various problems in drug discovery and design</a> including better adaptation and controllable generation in generative models and active learning. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.
 </p>
-
-
+</div>
 <br>
 
 ----

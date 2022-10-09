@@ -14,7 +14,7 @@ theme:
   language: 'en'
   palette:
     primary: 'white'
-    accent: 'white'
+    accent: 'red'
   font:
     text: 'Lato'
     code: 'Ubuntu Mono'
