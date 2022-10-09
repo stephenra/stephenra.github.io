@@ -1,5 +1,4 @@
 ---
-title: Black box recursive translation
 date: 2020-01-06
 authors:
     - stephen
