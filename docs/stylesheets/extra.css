@@ -17,8 +17,8 @@ a {
 }
 
 a:hover {
-  border-bottom-color: #ea2844;
-  color: #ea2844 !important;
+  border-bottom-color: #ea1c3b;
+  color: #ea1c3b !important;
 }
 
 a:hover strong {
@@ -44,6 +44,7 @@ a:hover strong {
 .md-header-topic {
   padding: 0rem;
   font-size: 1.2rem;
+  font-weight: 500;
   line-height: 2.1rem
 }
 
@@ -88,7 +89,7 @@ i {
 
 .md-nav__link--active,
 .md-nav__link:active {
-  color: #ea2844
+  color: #ea1c3b
 }
 
 .md-nav__item--nested>.md-nav__link {
@@ -97,7 +98,7 @@ i {
 
 .md-nav__link:focus,
 .md-nav__link:hover {
-  color: #ea2844
+  color: #ea1c3b
 }
 
 /* .md-nav__source,
