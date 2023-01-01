@@ -45,7 +45,7 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 
 <br>
 
-<img src="../img/openfold.gif" style="height:160px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
+<img src="../img/openfold.gif" style="height:170px; width:180px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization</ins>**](https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full)
 <br>
 Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Timothy J O'Donnell, Daniel Berenberg, Ian Fisk, Niccolò Zanichelli, Bo Zhang, Arkadiusz Nowaczynski, Bei Wang, Marta M Stepniewska-Dziubinska, Shang Zhang, Adegoke Ojewole, Murat Efe Guney, Stella Biderman, Andrew M Watkins, <b>Stephen Ra</b>, Pablo Ribalta Lorenzo, Lucas Nivon, Brian Weitzner, Yih-En Andrew Ban, Peter K Sorger, Emad Mostaque, Zhao Zhang, Richard Bonneau, Mohammed AlQuraishi
@@ -75,7 +75,7 @@ Nataša Tagasovska, Nathan C. Frey, Andreas Loukas, Isidro Hötzel, Julien Lafra
 
 <br>
 
-<img src="../img/propertydag.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
+<img src="../img/propertydag.png" style="height:140px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>PropertyDAG: Multi-objective Bayesian optimization of partially ordered, mixed-variable properties for biological sequence design</ins>**](https://arxiv.org/abs/2210.04096)
 <br>
 Ji Won Park, Samuel Stanton, Saeed Saremi, Andrew Watkins, Henri Dwyer, Vladimir Gligorijević, Richard Bonneau, <b>Stephen Ra</b>, Kyunghyun Cho
