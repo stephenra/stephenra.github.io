@@ -93,8 +93,7 @@ Ji Won Park, Samuel Stanton, Saeed Saremi, Andrew Watkins, Henri Dwyer, Vladimir
 <br>
 Jae Hyeon Lee, Payman Yadollahpour, Andrew Watkins, Nathan C. Frey, Andrew Leaver-Fay, <b>Stephen Ra</b>, Kyunghyun Cho, Vladimir Gligorijević, Richard Bonneau, Aviv Regev, Richard Bonneau
 <br>
-*NeurIPS Machine Learning for Structural Biology Workshop*, 2022  <b>(Selected Talk)</b>  
-<br>
+*NeurIPS Machine Learning for Structural Biology Workshop*, 2022  <b>(Selected Talk)</b>   
 <a href="https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1">Paper</a> | <a href="https://github.com/Genentech/equifold">Code</a>
 
 <br>
