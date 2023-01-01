@@ -45,13 +45,12 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 
 <br>
 
-<img src="../img/openfold.gif" style="height:150px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
+<img src="../img/openfold.gif" style="height:160px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization</ins>**](https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full)
 <br>
 Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Timothy J O'Donnell, Daniel Berenberg, Ian Fisk, Niccolò Zanichelli, Bo Zhang, Arkadiusz Nowaczynski, Bei Wang, Marta M Stepniewska-Dziubinska, Shang Zhang, Adegoke Ojewole, Murat Efe Guney, Stella Biderman, Andrew M Watkins, <b>Stephen Ra</b>, Pablo Ribalta Lorenzo, Lucas Nivon, Brian Weitzner, Yih-En Andrew Ban, Peter K Sorger, Emad Mostaque, Zhao Zhang, Richard Bonneau, Mohammed AlQuraishi
 <br>
-*bioRxiv*, 2022  
-<br>
+*bioRxiv*, 2022   
 <a href="https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full">Paper</a> | <a href="https://github.com/aqlaboratory/openfold">Code</a>
 
 <br>
@@ -61,7 +60,7 @@ Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Tim
 <br>
 Romain Lopez, Nataša Tagasovska, <b>Stephen Ra</b>, Kyunghyn Cho, Jonathan K. Pritchard, Aviv Regev
 <br>
-*NeurIPS Causal Machine Learning for Real-World Impact Workshop*, 2022 
+*NeurIPS Causal Machine Learning for Real-World Impact Workshop*, 2022   
 <a href="https://arxiv.org/abs/2211.03553">Paper</a>
 
 <br>
@@ -71,8 +70,7 @@ Romain Lopez, Nataša Tagasovska, <b>Stephen Ra</b>, Kyunghyn Cho, Jonathan K. P
 <br>
 Nataša Tagasovska, Nathan C. Frey, Andreas Loukas, Isidro Hötzel, Julien Lafrance-Vanasse, Ryan Lewis Kelly, Yan Wu, Arvind Rajpal, Richard Bonneau, Kyunghyun Cho, <b>Stephen Ra</b>, Vladimir Gligorijević
 <br>
-*NeurIPS AI for Science Workshop*, 2022  
-<br>
+*NeurIPS AI for Science Workshop*, 2022   
 <a href="https://arxiv.org/abs/2210.10838">Paper</a> | [Poster](../img/pcebm.pdf)
 
 <br>
@@ -82,8 +80,7 @@ Nataša Tagasovska, Nathan C. Frey, Andreas Loukas, Isidro Hötzel, Julien Lafra
 <br>
 Ji Won Park, Samuel Stanton, Saeed Saremi, Andrew Watkins, Henri Dwyer, Vladimir Gligorijević, Richard Bonneau, <b>Stephen Ra</b>, Kyunghyun Cho
 <br>
-*NeurIPS AI for Science Workshop*, 2022
-<br>
+*NeurIPS AI for Science Workshop*, 2022   
 <a href="https://arxiv.org/abs/2210.04096">Paper</a> | [Poster](../img/propertydag.pdf)
 
 <br>
