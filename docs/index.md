@@ -31,7 +31,7 @@ img {
 
 <div style="text-align:left; vertical-align: left; padding:0px 220px;">
 <p>
-I am the Director of Frontier Research at <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>, where I co-lead a team working on machine learning for scientific discovery. 
+I am the Director of Frontier Research at and part of the Founding Team of <a href="https://www.gene.com/prescient">Prescient Design, a Genentech Accelerator</a>, where I co-lead a team working on machine learning for scientific discovery. 
 </p>
 <p>
 Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led a research group focused on <a href="https://insights.pfizer.com/pfizer-is-using-ai-to-discover-breakthrough-medicines">developing methods for problems in drug discovery</a> including better adaptation for generative models and active learning. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.
@@ -48,7 +48,7 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 <img src="../img/openfold.gif" style="height:170px; width:180px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization</ins>**](https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full)
 <br>
-Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Timothy J O'Donnell, Daniel Berenberg, Ian Fisk, Niccolò Zanichelli, Bo Zhang, Arkadiusz Nowaczynski, Bei Wang, Marta M Stepniewska-Dziubinska, Shang Zhang, Adegoke Ojewole, Murat Efe Guney, Stella Biderman, Andrew M Watkins, <b>Stephen Ra</b>, Pablo Ribalta Lorenzo, Lucas Nivon, Brian Weitzner, Yih-En Andrew Ban, Peter K Sorger, Emad Mostaque, Zhao Zhang, Richard Bonneau, Mohammed AlQuraishi
+Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Timothy J O'Donnell, Daniel Berenberg, Ian Fisk, Niccolò Zanichelli, [...] Adegoke Ojewole, Murat Efe Guney, Stella Biderman, Andrew M Watkins, <b>Stephen Ra</b>, Pablo Ribalta Lorenzo, Lucas Nivon, Brian Weitzner, Yih-En Andrew Ban, Peter K Sorger, Emad Mostaque, Zhao Zhang, Richard Bonneau, Mohammed AlQuraishi
 <br>
 *bioRxiv*, 2022   
 <a href="https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full">Paper</a> | <a href="https://github.com/aqlaboratory/openfold">Code</a>
