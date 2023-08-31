@@ -1,4 +1,5 @@
-stephen:
-  name: Stephen Ra
-  description: Author
-  avatar: https://stephenra.com/img/profile.png
+authors:
+  stephen:
+    name: Stephen Ra
+    description: Director of Frontier Research, Prescient Design
+    avatar: https://stephenra.com/img/profile.png
