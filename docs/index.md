@@ -58,7 +58,7 @@ Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Tim
 <img src="../img/sparse.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>Learning causal representations of single cells via sparse mechanism shift modeling</ins>**](https://arxiv.org/abs/2211.03553)
 <br>
-Romain Lopez, Nataša Tagasovska, <b>Stephen Ra</b>, Kyunghyn Cho, Jonathan K. Pritchard, Aviv Regev
+Romain Lopez, Nataša Tagasovska, <b>Stephen Ra</b>, Kyunghyun Cho, Jonathan K. Pritchard, Aviv Regev
 <br>
 *NeurIPS Causal Machine Learning for Real-World Impact Workshop*, 2022   
 <a href="https://arxiv.org/abs/2211.03553">Paper</a>
