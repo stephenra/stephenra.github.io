@@ -20,9 +20,8 @@ img {
 <img src="../img/profile.png" alt="profile" style="width:190px;height:196px; margin-top:12px; margin-right:15px;" />
 
 I am the Director of Frontier Research and part of the Founding Team of [Prescient Design](https://www.gene.com/prescient), a machine learning startup that was acquired by Genentech in 2021 and has now been integrated as a dedicated AI/ML research group within Genentech Computational Sciences (gCS). My research focuses on statistical machine learning for scientific discovery with applications to biomedicine and drug discovery. Previously, I was Head of Machine Learning of Pfizer R&D, where I led a group focused on developing new ML algorithms for problems across the drug discovery and development pipeline. My background is in statistical machine learning and neuroscience, having worked on my Ph.D. in Computer Science and Statistics. I finished my graduate studies at Columbia University and undergraduate studies at Cornell University.  
-  
-  
-  
+
+<br>
 ----
 
 ## Recent Papers
