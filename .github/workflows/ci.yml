@@ -25,5 +25,9 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install pypandoc mkdocs-material python-markdown-math mkdocs-bibtex 
+      - run: pip install \
+               mkdocs-material \
+               pypandoc \
+               python-markdown-math \
+               mkdocs-bibtex 
       - run: mkdocs gh-deploy --force
