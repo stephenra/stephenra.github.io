@@ -35,10 +35,7 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 ## Recent Publications
 
 <img src="../img/dwjs.png" style="height:170px; width:180px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Protein discovery with discrete walk-jump sampling</ins>**](https://arxiv.org/abs/2306.12360)
-
-Nathan C. Frey, Daniel Berenberg, Karina Zadorozhny, Joseph Kleinhenz, Julien Lafrance-Vanasse, Isidro Hötzel, Yan Wu, **Stephen Ra**, Richard Bonneau, Kyunghyun Cho, Andreas Loukas, Vladimir Gligorijevic´, Saeed Saremi
-
-NeurIPS Generative AI and Biology Workshop, 2023 (Selected Talk)
-
-[Paper](https://arxiv.org/abs/2306.12360) | [Code](https://github.com/Genentech/walk-jump)
+[**<ins>Protein discovery with discrete walk-jump sampling</ins>**](https://arxiv.org/abs/2306.12360)  
+Nathan C. Frey, Daniel Berenberg, Karina Zadorozhny, Joseph Kleinhenz, Julien Lafrance-Vanasse, Isidro Hötzel, Yan Wu, **Stephen Ra**, Richard  Bonneau, Kyunghyun Cho, Andreas Loukas, Vladimir Gligorijevic´, Saeed Saremi  
+NeurIPS Generative AI and Biology Workshop, 2023 (Selected Talk)  
+[Paper](https://arxiv.org/abs/2306.12360) | [Code](https://github.com/Genentech/walk-jump)  

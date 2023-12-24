@@ -100,4 +100,6 @@ plugins:
   - blog
   - bibtex:
       bib_file: "docs/bib/refs.bib"
-      cite_style: "pandoc"
+      cite_style: "pandoc
+  - social
+  - typeset
