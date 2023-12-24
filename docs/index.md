@@ -4,8 +4,10 @@ hide:
 ---
 
 
-# 
-##  Bio
+#
+
+## Bio
+
 <style>
 img {
   /* border-radius: 50%; */
@@ -41,7 +43,7 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 
 ----
 
-## Publications
+## Recent Publications
 
 <br>
 
@@ -112,46 +114,5 @@ Vladimir Gligorijević, Daniel Berenberg, <b>Stephen Ra</b>, Andrew Watkins, Sim
 <br>
 *NeurIPS Machine Learning for Structural Biology Workshop*, 2021  <b>(Selected Talk)</b>  
 <a href="https://www.biorxiv.org/content/10.1101/2021.12.22.473759v1">Paper</a> | [Poster](../img/pdf/deep_manifold_sampling.pdf)
-
-<br>
-
-<img src="../img/bbrt.gif" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Black box recursive translations for molecular optimization</ins>**](../img/pdf/bbrt.pdf)
-<br>
-Farhan Damani, Vishnu Sresht, <b>Stephen Ra</b>
-<br>
-*NeurIPS Machine Learning for Molecules Workshop*, 2020  
-<a href="https://arxiv.org/abs/1912.10156">Paper</a> | [Poster](../img/bbrt_neurips2020.pdf)
-
-<br>
-
-<img src="../img/phenotype.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Deep learning of representations for transcriptomics-based phenotype prediction</ins>**](https://slideslive.com/38923282/cell)  
-Aaron M. Smith, Jonathan R. Walsh, John Long, Craig B. Davis, Peter Henstock,
-Martin R. Hodge, Mateusz Maciejewski, Xinmeng Jasminue Mu, <b>Stephen Ra</b>,
-Shanrong Zhao, Daniel Ziemek, Charles K. Fisher   
-*BMC Bioinformatics*, 2020 & *NeurIPS Learning Meaningful Representations of Life Workshop*, 2019 <b>(Oral Presentation)</b>  
-<a href="https://www.biorxiv.org/content/10.1101/574723v2">Paper</a> |
-<a href="https://github.com/unlearnai/representation_learning_for_transcriptomics">Code</a> |
-<a href="https://figshare.com/projects/Deep_learning_of_representations_for_transcriptomics-based_phenotype_prediction/60938">Data</a> | <a href="https://www.biorxiv.org/content/10.1101/574723v2">Poster</a> | <a href="https://slideslive.com/38921963/learning-meaningful-representations-of-life-4">Video</a>
-
-<br>
-
-<img src="../img/faah.jpg" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>FAAH genetic variation enhances frontoamygdala function in mouse and human</ins>**](https://www.nature.com/articles/ncomms7395)  
-Iva Dincheva, Andrew T. Drysdale, Catherine A. Hartley, David C. Johnson, Deqiang Jing, Elizabeth C. King, <b>Stephen Ra</b>, J. Megan Gray, Ruirong Yang, Ann Marie DeGruccio, Chienchun Huang, Charles E. Glatt, Matthew N. Hill, B.J. Casey, Francis Lee   
-*Nature Communications*, 2015; 6, 6395. doi:10.1038/ncomms7395   
-<a href="/assets/papers/dincheva_et_al_2015.pdf" class="button small">Paper</a> |
-<a href="https://www.nytimes.com/2015/03/08/opinion/sunday/the-feel-good-gene.html?_r=1" class="button small">NYTimes Op-Ed</a>
-
-<br>
-
-<img src="../img/cacna1c.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Forebrain elimination of cacna1c mediates anxiety-like behavior in mice</ins>**](https://www.nature.com/articles/mp201271)  
-Anni S. Lee[^*], <b>Stephen Ra</b>[^*], Aditi M. Rajadhyaksha, Jeremiah K. Britt, Héctor De Jesús-Cortés, KL Gonzales, Amy Lee, Sven Moosmang, Franz Hofmann, Andrew A. Pieper, Anjali M. Rajadhyaksha   
-*Nature Molecular Psychiatry*, 2012; 17, 1054-55. doi:10.1038/mp.2012.71   
-<a href="/assets/papers/lee_et_al_2012.pdf" class="button small">Paper</a>
-
-
 
 [^*]: Equal contribution
