@@ -10,22 +10,11 @@ hide:
 
 <style>
 img {
-  /* border-radius: 50%; */
   display: block;
   margin-left: auto;
   margin-right: auto;
+  float: left;
 }
-</style>
-
-<style>
-    img {
-    /* border-radius: 50%; */
-    /* display: block;
-    /* padding: 7px; */
-    /* margin-left: auto;
-    margin-right: auto; */
-    float: left;
-    }
 </style>
 
 <img src="../img/profile.png" alt="profile" style="width:190px;height:196px; margin-top:12px; margin-right:15px;" />
@@ -45,74 +34,11 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 
 ## Recent Publications
 
-<br>
+<img src="../img/dwjs.png" style="height:170px; width:180px; margin-top:0px; margin-left:30px; margin-right:30px;">
+[**<ins>Protein discovery with discrete walk-jump sampling</ins>**](https://arxiv.org/abs/2306.12360)
 
-<img src="../img/openfold.gif" style="height:170px; width:180px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>OpenFold: Retraining AlphaFold2 yields new insights into its learning mechanisms and capacity for generalization</ins>**](https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full)
-<br>
-Gustaf Ahdritz, Nazim Bouatta, Sachin Kadyan, Qinghgui Xia, William Gerecke, Timothy J O'Donnell, Daniel Berenberg, Ian Fisk, Niccolò Zanichelli, [...] Adegoke Ojewole, Murat Efe Guney, Stella Biderman, Andrew M Watkins, <b>Stephen Ra</b>, Pablo Ribalta Lorenzo, Lucas Nivon, Brian Weitzner, Yih-En Andrew Ban, Peter K Sorger, Emad Mostaque, Zhao Zhang, Richard Bonneau, Mohammed AlQuraishi
-<br>
-*bioRxiv*, 2022   
-<a href="https://www.biorxiv.org/content/10.1101/2022.11.20.517210v2.full">Paper</a> | <a href="https://github.com/aqlaboratory/openfold">Code</a>
+Nathan C. Frey, Daniel Berenberg, Karina Zadorozhny, Joseph Kleinhenz, Julien Lafrance-Vanasse, Isidro Hötzel, Yan Wu, **Stephen Ra**, Richard Bonneau, Kyunghyun Cho, Andreas Loukas, Vladimir Gligorijevic´, Saeed Saremi
 
-<br>
+NeurIPS Generative AI and Biology Workshop, 2023 (Selected Talk)
 
-<img src="../img/sparse.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Learning causal representations of single cells via sparse mechanism shift modeling</ins>**](https://arxiv.org/abs/2211.03553)
-<br>
-Romain Lopez, Nataša Tagasovska, <b>Stephen Ra</b>, Kyunghyun Cho, Jonathan K. Pritchard, Aviv Regev
-<br>
-*NeurIPS Causal Machine Learning for Real-World Impact Workshop*, 2022   
-<a href="https://arxiv.org/abs/2211.03553">Paper</a>
-
-<br>
-
-<img src="../img/pcebm.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>A Pareto-optimal compositional energy-based model for sampling and optimization of protein sequences</ins>**](https://arxiv.org/abs/2210.10838)
-<br>
-Nataša Tagasovska, Nathan C. Frey, Andreas Loukas, Isidro Hötzel, Julien Lafrance-Vanasse, Ryan Lewis Kelly, Yan Wu, Arvind Rajpal, Richard Bonneau, Kyunghyun Cho, <b>Stephen Ra</b>, Vladimir Gligorijević
-<br>
-*NeurIPS AI for Science Workshop*, 2022   
-<a href="https://arxiv.org/abs/2210.10838">Paper</a> | [Poster](../img/pcebm.pdf)
-
-<br>
-
-<img src="../img/propertydag.png" style="height:140px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>PropertyDAG: Multi-objective Bayesian optimization of partially ordered, mixed-variable properties for biological sequence design</ins>**](https://arxiv.org/abs/2210.04096)
-<br>
-Ji Won Park, Samuel Stanton, Saeed Saremi, Andrew Watkins, Henri Dwyer, Vladimir Gligorijević, Richard Bonneau, <b>Stephen Ra</b>, Kyunghyun Cho
-<br>
-*NeurIPS AI for Science Workshop*, 2022   
-<a href="https://arxiv.org/abs/2210.04096">Paper</a> | [Poster](../img/propertydag.pdf)
-
-<br>
-
-<img src="../img/equifold.gif" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>EquiFold: Protein structure prediction with a novel coarse-grained representation</ins>**](https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1)
-<br>
-Jae Hyeon Lee, Payman Yadollahpour, Andrew Watkins, Nathan C. Frey, Andrew Leaver-Fay, <b>Stephen Ra</b>, Kyunghyun Cho, Vladimir Gligorijević, Richard Bonneau, Aviv Regev, Richard Bonneau
-<br>
-*NeurIPS Machine Learning for Structural Biology Workshop*, 2022  <b>(Selected Talk)</b>   
-<a href="https://www.biorxiv.org/content/10.1101/2022.10.07.511322v1">Paper</a> | <a href="https://github.com/Genentech/equifold">Code</a>
-
-<br>
-
-<img src="../img/msps_before.png" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Multi-segment preserving sampling for deep manifold sampler</ins>**](../img/pdf/multi_segment_preserving_sampling.pdf)
-<br>
-Daniel Berenberg, Jae Hyeon Lee, Simon Kelow, Ji Won Park, Andrew Watkins, Vladimir Gligorijević, Richard Bonneau, <b>Stephen Ra</b>, Kyunghyun Cho
-<br>
-*ICLR Machine Learning for Drug Discovery Workshop*, 2022  <b>(Selected Talk)</b>  
-<a href="https://arxiv.org/abs/2205.04259">Paper</a> | [Poster](../img/multi_segent_preserving_sampling.pdf)
-
-<br>
-
-<img src="../img/manifold_sampling.gif" style="height:130px; width:160px; margin-top:0px; margin-left:30px; margin-right:30px;">
-[**<ins>Function-guided protein design by deep manifold sampling</ins>**](../img/pdf/deep_manifold_sampling.pdf)
-<br>
-Vladimir Gligorijević, Daniel Berenberg, <b>Stephen Ra</b>, Andrew Watkins, Simon Kelow, Kyunghyun Cho, and Richard Bonneau
-<br>
-*NeurIPS Machine Learning for Structural Biology Workshop*, 2021  <b>(Selected Talk)</b>  
-<a href="https://www.biorxiv.org/content/10.1101/2021.12.22.473759v1">Paper</a> | [Poster](../img/pdf/deep_manifold_sampling.pdf)
-
-[^*]: Equal contribution
+[Paper](https://arxiv.org/abs/2306.12360) | [Code](https://github.com/Genentech/walk-jump)
