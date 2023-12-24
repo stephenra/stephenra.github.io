@@ -32,7 +32,7 @@ Previously, I was Head of Machine Learning at Pfizer R&D, where I built and led 
 
 ----
 
-## Recent Publications
+## Recent Papers
 
 <img src="../img/dwjs.png" style="height:170px; width:180px; margin-top:0px; margin-left:30px; margin-right:30px;">
 [**<ins>Protein discovery with discrete walk-jump sampling</ins>**](https://arxiv.org/abs/2306.12360)  
