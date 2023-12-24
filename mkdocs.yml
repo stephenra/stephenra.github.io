@@ -102,4 +102,3 @@ plugins:
       bib_file: "docs/bib/refs.bib"
       cite_style: "pandoc"
   - social
-  - typeset
