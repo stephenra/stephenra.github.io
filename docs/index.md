@@ -33,11 +33,13 @@ Nathan C. Frey, Daniel Berenberg, Karina Zadorozhny, Joseph Kleinhenz, Julien La
 *ICLR 2024 (Oral)*  
 [Paper](https://arxiv.org/abs/2306.12360) | [Code](https://github.com/Genentech/walk-jump)  
 
+
 <img src="../img/cbgm.png" style="height:120px; width:150px; margin-left:30px; margin-right:30px;">
 [**<ins>Concept bottleneck generative models</ins>**](https://openreview.net/pdf?id=zFOdOChRPR)  
 Aya Abdelsalam Ismail, Julius Adebayo, Héctor Corrada Bravo, **Stephen Ra**, Kyunghyun Cho  
 *ICLR 2024*  
 [Paper](https://openreview.net/pdf?id=zFOdOChRPR)  
+
 
 <img src="../img/voxmol.png" style="height:120px; width:150px; margin-left:30px; margin-right:30px;">
 [**<ins>3D molecule generation by denoising voxel grids</ins>**](https://arxiv.org/abs/2306.07473)  
